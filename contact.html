@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Narendra Kumar Verma</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #fff8f0;
+      color: #333;
+    }
+    header, footer {
+      background-color: #b22222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #ff7f50;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      padding: 15px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background-color: #cd5c5c;
+    }
+    section {
+      padding: 30px;
+    }
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+    .contact-icons a {
+      background-color: #ff7f50;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .contact-icons a:hover {
+      background-color: #cd5c5c;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      background: #b22222;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .map {
+      width: 100%;
+      height: 300px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Contact Me</h1>
+    <p class="tagline">Direct Communication – No Agents or Middlemen</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="tours.html">Tours</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <section>
+    <h2>Get in Touch</h2>
+    <p style="font-size: 1.1em;">Plan your perfect Agra tour today! I’m here to answer any questions and help you make the most of your visit.</p>
+
+    <div class="contact-icons">
+      <a href="https://wa.me/919557824127" target="_blank">💬 WhatsApp Now</a>
+      <a href="tel:+919557824127">📞 Call Me</a>
+      <a href="mailto:travelhghts98@gmail.com">✉️ Send Email</a>
+    </div>
+
+    <form action="mailto:travelhghts98@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+
+    <h3>Location in Agra</h3>
+    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.998636176281!2d78.0395672!3d27.1751442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397471292b1aa8db%3A0x7d3aeac0de9f8c78!2sTaj%20Mahal!5e0!3m2!1sen!2sin!4v1615793019702!5m2!1sen!2sin" frameborder="0" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Narendra Kumar Verma | Certified Tourist Guide, Agra</p>
+    <p>Contact: +91 95578 24127 | travelhghts98@gmail.com</p>
+  </footer>
+  <!-- Floating Call Button -->
+  <a href="tel:+919557824127" class="floating-call" title="Call Narendra Kumar Verma">📞</a>
+</body>
+</html>

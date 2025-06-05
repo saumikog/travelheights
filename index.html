@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Narendra Kumar Verma - Tourist Guide in Agra</title>
+  <style>
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      /* Background with image and dark overlay */
+      background: 
+        linear-gradient(rgba(15, 32, 39, 0.6), rgba(44, 62, 80, 0.6)),
+        url('https://media.istockphoto.com/id/155096944/photo/taj-mahal-sunrise.jpg?s=612x612&w=0&k=20&c=SR-5FqC8K5cMJwUbLa-UQGAvZdJ48rLrdg63bBYpsDU=')
+        no-repeat center center fixed;
+      background-size: cover;
+      color: #f0f0f0;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* Header with gradient and floating effect */
+    header {
+      background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+      color: #082032;
+      padding: 15px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      animation: floatUpDown 6s ease-in-out infinite;
+      backdrop-filter: saturate(180%) blur(10px);
+      -webkit-backdrop-filter: saturate(180%) blur(10px);
+    }
+    @keyframes floatUpDown {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #0d1b2a;
+      text-shadow: 1px 1px 6px rgba(255 255 255 / 0.9);
+    }
+    header p {
+      margin: 5px 0 0 0;
+      font-weight: 400;
+      font-size: 1.1rem;
+      color: #184e77;
+      text-shadow: 1px 1px 4px rgba(255 255 255 / 0.9);
+    }
+    /* Navigation */
+    nav ul {
+      list-style: none;
+      margin: 15px 0 0 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+    nav ul li a {
+      color: #0d1b2a;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 25px;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      background: rgba(255 255 255 / 0.25);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      display: inline-block;
+    }
+    nav ul li a:hover,
+    nav ul li a:focus {
+      background: rgba(255 255 255 / 0.5);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+      color: #0a2463;
+    }
+    /* Hero Section */
+    main {
+      position: relative;
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px 40px;
+      overflow: visible;
+      flex-direction: column;
+      gap: 40px;
+      z-index: 1;
+    }
+    .hero-container {
+      max-width: 900px;
+      background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 12px 30px rgba(12, 40, 80, 0.25);
+      backdrop-filter: saturate(180%) blur(10px);
+      animation: floatBox 6s ease-in-out infinite;
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      color: #0a2463;
+      font-weight: 600;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    @keyframes floatBox {
+      0%, 100% { transform: translateY(0); box-shadow: 0 12px 30px rgba(12, 40, 80, 0.25);}
+      50% { transform: translateY(-15px); box-shadow: 0 20px 45px rgba(12, 40, 80, 0.4);}
+    }
+    .hero-container h2 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      letter-spacing: 1.5px;
+      text-shadow: 1px 1px 6px rgba(255 255 255 / 0.75);
+      font-weight: 700;
+    }
+    .hero-container p {
+      font-size: 1.25rem;
+      line-height: 1.5;
+      max-width: 600px;
+      margin: 0 auto;
+      text-shadow: 1px 1px 6px rgba(255 255 255 / 0.6);
+    }
+    /* Floating graphics with light gradient colors */
+    .floating-graphic {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.5;
+      filter: drop-shadow(0 0 12px rgba(0,0,0,0.1));
+      animation: floatSlow ease-in-out infinite;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      background: linear-gradient(135deg, #fbc7a4 0%, #facfcf 100%);
+      box-shadow: 0 0 15px #fbc7a4aa;
+    }
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    .circle1 {
+      width: 140px;
+      height: 140px;
+      background: linear-gradient(135deg, #fbc7a4 0%, #facfcf 100%);
+      top: 70px;
+      left: 15px;
+      animation-duration: 8s;
+      z-index: 1;
+      box-shadow: 0 0 25px #facfcfaa;
+    }
+    .circle2 {
+      width: 90px;
+      height: 90px;
+      background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+      bottom: 50px;
+      right: 50px;
+      animation-duration: 10s;
+      z-index: 1;
+      box-shadow: 0 0 20px #fda085aa;
+    }
+    .circle3 {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+      top: 200px;
+      right: 130px;
+      animation-duration: 7s;
+      z-index: 1;
+      box-shadow: 0 0 18px #a1c4fdaa;
+    }
+    /* Book Tickets Section */
+    .book-tickets {
+      max-width: 900px;
+      background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+      border-radius: 20px;
+      padding: 30px 40px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+      backdrop-filter: saturate(180%) blur(12px);
+      color: #2c3e50;
+      text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .book-tickets h3 {
+      margin-top: 0;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #34495e;
+      margin-bottom: 25px;
+      letter-spacing: 1.2px;
+    }
+    .ticket-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .ticket-button {
+      background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+      color: #082032;
+      font-weight: 700;
+      font-size: 1.25rem;
+      padding: 18px 28px;
+      border-radius: 30px;
+      box-shadow: 0 6px 18px rgba(102, 166, 255, 0.6);
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      min-width: 160px;
+      user-select: none;
+      letter-spacing: 0.8px;
+    }
+    .ticket-button:hover,
+    .ticket-button:focus {
+      box-shadow: 0 12px 30px rgba(102, 166, 255, 0.8);
+      transform: translateY(-5px);
+      outline: none;
+      color: #1b263b;
+      text-decoration: none;
+    }
+    .ticket-button:active {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(102, 166, 255, 0.7);
+    }
+    /* Footer with gradient */
+    footer {
+      background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+      color: #082032;
+      text-align: center;
+      padding: 15px 0;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+      font-weight: 500;
+      font-size: 0.9rem;
+      user-select: none;
+      backdrop-filter: saturate(180%) blur(10px);
+      -webkit-backdrop-filter: saturate(180%) blur(10px);
+    }
+    footer p {
+      margin: 5px 0;
+      text-shadow: 1px 1px 6px rgba(255 255 255 / 0.8);
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      nav ul {
+        gap: 12px;
+      }
+      .hero-container h2 {
+        font-size: 2rem;
+      }
+      .hero-container p {
+        font-size: 1rem;
+      }
+      .floating-graphic {
+        display: none;
+      }
+      .ticket-buttons {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .ticket-button {
+        width: 100%;
+        min-width: unset;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Narendra Kumar Verma</h1>
+    <p>Your Friendly Local Guide in Agra - 13 Years of Experience</p>
+    <nav>
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="tours.html">Tour Packages</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero-container" role="region" aria-label="Welcome Section">
+      <h2>Welcome!</h2>
+      <p>Explore Agra with a trusted local expert. Skip the middlemen and enjoy a personalized experience.</p>
+    </div>
+
+    <section class="book-tickets" aria-labelledby="book-tickets-title">
+      <h3 id="book-tickets-title">Book Tickets</h3>
+      <div class="ticket-buttons">
+        <a href="https://asi.payumoney.com/quick/taj" target="_blank" rel="noopener noreferrer" class="ticket-button" role="button" aria-label="Book Taj Mahal ticket">
+          Taj Mahal
+        </a>
+        <a href="https://asi.payumoney.com/quick/agrafort" target="_blank" rel="noopener noreferrer" class="ticket-button" role="button" aria-label="Book Agra Fort ticket">
+          Agra Fort
+        </a>
+      </div>
+    </section>
+
+    <!-- Floating graphics -->
+    <div class="floating-graphic circle1" aria-hidden="true"></div>
+    <div class="floating-graphic circle2" aria-hidden="true"></div>
+    <div class="floating-graphic circle3" aria-hidden="true"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Narendra Kumar Verma. All rights reserved.</p>
+    <p>Contact: +91-9557824127 | Email: travelhghts98@gmail.com</p>
+  </footer>
+</body>
+</html>
+

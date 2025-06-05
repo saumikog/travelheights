@@ -1,43 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About - Narendra Kumar Verma</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <style>
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
-      background-color: #fff8f0;
+      background: linear-gradient(135deg, #fff8f0 40%, #ffe8d6 100%);
       color: #333;
+      overflow-x: hidden;
+      line-height: 1.6;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
+    /* Header and footer styling */
     header, footer {
       background-color: #b22222;
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 32px 20px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgb(178 34 34 / 0.5);
+      animation: fadeInDown 1s ease forwards;
     }
+    header h1 {
+      font-weight: 600;
+      font-size: 2.8rem;
+      margin: 0 0 10px;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 2px #660000;
+    }
+    .tagline {
+      font-weight: 300;
+      font-size: 1.2rem;
+      font-style: italic;
+      letter-spacing: 0.05em;
+      opacity: 0.85;
+    }
+    footer p {
+      margin: 6px 0;
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+    }
+    /* Navigation styling */
     nav {
       display: flex;
       justify-content: center;
       background: #ff7f50;
       flex-wrap: wrap;
+      box-shadow: 0 2px 10px rgb(255 127 80 / 0.5);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      animation: slideDown 0.7s ease forwards;
     }
     nav a {
+      flex: 1 0 auto;
+      max-width: 140px;
+      text-align: center;
       color: white;
-      padding: 15px;
+      padding: 18px 15px;
       text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      position: relative;
+      overflow: hidden;
     }
-    nav a:hover {
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 6px;
+      width: 0;
+      height: 3px;
+      background: #b22222;
+      transition: width 0.3s ease, left 0.3s ease;
+      border-radius: 3px;
+    }
+    nav a:hover,
+    nav a:focus {
       background-color: #cd5c5c;
+      transform: scale(1.1);
+      outline: none;
     }
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 80%;
+      left: 10%;
+    }
+    nav a.active {
+      background-color: #b22222;
+      font-weight: 700;
+    }
+    nav a.active::after {
+      width: 80%;
+      left: 10%;
+      background-color: #fff8f0;
+    }
+    /* Main content section styling */
     section {
-      padding: 30px;
+      background: white;
+      max-width: 900px;
+      margin: 40px auto 60px;
+      padding: 40px 45px;
+      border-radius: 14px;
+      box-shadow: 0 20px 40px rgb(178 34 34 / 0.15);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.3s;
+      will-change: transform, opacity;
     }
+    /* Animate multiple paragraphs with delay */
+    section p, section h2, section h3, section ul {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.7s ease forwards;
+    }
+    section h2 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 0.4em;
+      color: #b22222;
+      letter-spacing: 0.04em;
+      text-shadow: 0 1px 3px #8b0000aa;
+    }
+    section h3 {
+      margin-top: 40px;
+      font-weight: 600;
+      font-size: 1.6rem;
+      color: #b22222;
+      letter-spacing: 0.03em;
+      text-shadow: 0 1px 2px #8b000099;
+    }
+    section p:nth-of-type(1) {
+      animation-delay: 0.4s;
+    }
+    section p:nth-of-type(2) {
+      animation-delay: 0.7s;
+    }
+    section p:nth-of-type(3) {
+      animation-delay: 1s;
+    }
+    section p:nth-of-type(4) {
+      animation-delay: 1.3s;
+    }
+    section p:nth-of-type(5) {
+      animation-delay: 1.6s;
+    }
+    section ul {
+      margin-top: 15px;
+      list-style: none;
+      padding-left: 0;
+      animation-delay: 2s;
+    }
+    section ul li {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 28px;
+      font-weight: 500;
+      cursor: default;
+      transition: color 0.25s ease;
+    }
+    section ul li::before {
+      content: "✅";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      font-size: 1.3rem;
+      color: #b22222;
+      transition: transform 0.3s ease;
+    }
+    section ul li:hover {
+      color: #b22222;
+    }
+    section ul li:hover::before {
+      transform: scale(1.4);
+    }
+    /* Highlight class */
     .highlight {
       color: #b22222;
-      font-weight: bold;
+      font-weight: 600;
+      position: relative;
+    }
+    .highlight::after {
+      content: "";
+      position: absolute;
+      bottom: 2px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #ff7f50, #b22222);
+      border-radius: 2px;
+      opacity: 0.5;
+      pointer-events: none;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .highlight:hover::after {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav a {
+        max-width: 100%;
+        flex: 1 1 50%;
+        padding: 14px;
+        font-size: 0.95rem;
+      }
+      section {
+        margin: 30px 15px 50px;
+        padding: 30px 25px;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      section h2 {
+        font-size: 1.8rem;
+      }
+      section h3 {
+        font-size: 1.3rem;
+      }
+    }
+    /* Animations */
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-25px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
@@ -49,20 +279,27 @@
 
   <nav>
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
+    <a href="about.html" class="active" aria-current="page">About</a>
     <a href="tours.html">Tours</a>
     <a href="gallery.html">Gallery</a>
     <a href="testimonials.html">Testimonials</a>
     <a href="contact.html">Contact</a>
   </nav>
 
-  <section>
+  <section id="about-content" aria-label="About Narendra Kumar Verma">
     <h2>Meet Your Guide</h2>
     <p>Hello! I'm <span class="highlight">Narendra Kumar Verma</span>, a certified tourist guide based in Agra. With over 13 years of experience, I offer insightful, safe, and memorable tours to both local and international visitors.</p>
+
+    <!-- Newly added About Me paragraph starts here -->
+    <p>Not many people pursue a career in the same industry they once dreamed of. But I am proud to say that I am one of those few who have turned their passion into a profession—with immense joy, dedication, and enthusiasm.</p>
+    <p>I have always seen tourism as a form of social service. Even today, as a professional, I strive to offer the best possible service to my guests from all around the world. I believe true service should never be compromised—regardless of the tour package provided by any travel agent.</p>
+    <p>Please note, I am <strong>not</strong> charging anything extra from your travel agent. But it’s important to understand that a <span class="highlight">tour guide is the ambassador of a country</span>. A guide ensures your <strong>safety, comfort, and satisfaction</strong> during your journey—not just by showing you places, but by being available to share knowledge, assist in every way possible, and make your experience memorable.</p>
+    <!-- Newly added About Me paragraph ends here -->
+
     <p>I speak <strong>English</strong> and <strong>Hindi</strong> fluently and am passionate about sharing the cultural and historical heritage of Agra. My license is certified by the Indian Government, ensuring you a professional and trustworthy experience.</p>
 
     <h3>Why Choose Me?</h3>
-    <ul>
+    <ul role="list">
       <li>✅ No agents or middlemen – direct contact and fair prices</li>
       <li>✅ Personalized and private tours tailored to your interests</li>
       <li>✅ Extensive local knowledge and storytelling</li>
@@ -74,6 +311,31 @@
     <p>&copy; 2025 Narendra Kumar Verma | Certified Tourist Guide, Agra</p>
     <p>Contact: +91 95578 24127 | travelhghts98@gmail.com</p>
   </footer>
+
+  <script>
+    // Scroll reveal animation for paragraphs and headings
+    document.addEventListener('DOMContentLoaded', () => {
+      const options = {
+        threshold: 0.1
+      };
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = "translateY(0)";
+            obs.unobserve(entry.target);
+          }
+        });
+      }, options);
+      
+      const faders = document.querySelectorAll('section p, section h2, section h3, section ul');
+      faders.forEach(el => {
+        el.style.opacity = 0;
+        el.style.transform = "translateY(20px)";
+        observer.observe(el);
+      });
+    });
+  </script>
 </body>
 </html>
-s
+

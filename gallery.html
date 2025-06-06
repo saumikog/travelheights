@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>Gallery - Narendra Kumar Verma</title>
   <style>
     :root {
@@ -16,6 +16,8 @@
       --transition-speed: 0.3s;
       --shadow-light: rgba(0,0,0,0.06);
       --border-radius: 0.75rem;
+      --font-family: 'Poppins', sans-serif;
+      --font-weight-bold: 700;
     }
     /* Reset */
     *, *::before, *::after {
@@ -23,7 +25,7 @@
     }
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
+      font-family: var(--font-family);
       color: var(--color-text-secondary);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -68,10 +70,12 @@
       user-select: none;
       display: block;
       transition: transform 0.2s ease;
+      border-radius: var(--border-radius);
     }
     .logo:hover, .logo:focus {
       transform: scale(1.05);
       outline: none;
+      box-shadow: 0 4px 12px rgba(178,34,34,0.3);
     }
     ul.nav-links {
       list-style: none;
@@ -79,7 +83,7 @@
       padding: 0;
       display: flex;
       gap: 28px;
-      font-weight: 600;
+      font-weight: var(--font-weight-bold);
       font-size: 1rem;
       color: var(--color-text-primary);
     }
@@ -96,11 +100,11 @@
       background-color: var(--color-primary);
       color: white;
       outline: none;
-      box-shadow: 0 4px 12px rgb(178 34 34 / 0.3);
+      box-shadow: 0 4px 12px rgba(178, 34, 34, 0.3);
       transform: scale(1.1);
     }
     ul.nav-links li a.active {
-      font-weight: 700;
+      font-weight: var(--font-weight-bold);
       color: var(--color-primary);
       position: relative;
     }
@@ -120,13 +124,13 @@
       margin: 96px auto 48px;
       padding: 48px 24px 72px;
       text-align: left;
-      color: white;
+      color: #fff;
       user-select: none;
       position: relative;
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 0.8s ease, transform 0.8s ease;
-      font-weight: 700;
+      font-weight: var(--font-weight-bold);
       font-size: 48px;
       line-height: 1.1;
       letter-spacing: 0.05em;
@@ -148,7 +152,7 @@
       font-size: 1.25rem;
       margin-top: 12px;
       max-width: 680px;
-      color: rgba(255 255 255 / 0.9);
+      color: rgba(255, 255, 255, 0.9);
       opacity: 1;
       font-style: normal;
       letter-spacing: 0.02em;
@@ -199,6 +203,8 @@
       box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
       transform-style: preserve-3d;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      background: white;
     }
     .gallery-grid > div:hover {
       transform: scale(1.05) translateZ(20px);
@@ -220,7 +226,7 @@
       font-size: 0.9em;
       margin-top: 8px;
       color: var(--color-primary);
-      font-weight: 600;
+      font-weight: var(--font-weight-bold);
       letter-spacing: 0.03em;
       user-select: none;
     }
@@ -255,6 +261,7 @@
       box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
       animation: scaleIn 0.4s ease forwards;
       user-select: none;
+      background: rgba(255,255,255,0.05);
     }
     .lightbox-content img {
       width: 100%;
@@ -268,7 +275,7 @@
       color: #fff;
       text-align: center;
       font-size: 1.1rem;
-      font-weight: 600;
+      font-weight: var(--font-weight-bold);
       margin-top: 12px;
       letter-spacing: 0.04em;
       user-select: text;
@@ -284,7 +291,7 @@
       height: 36px;
       color: white;
       font-size: 2rem;
-      font-weight: 700;
+      font-weight: var(--font-weight-bold);
       line-height: 36px;
       text-align: center;
       cursor: pointer;

@@ -4,316 +4,460 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About - Narendra Kumar Verma</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <style>
-    /* Reset and base */
-    * {
+    :root {
+      --color-primary: #b22222;
+      --color-text-primary: #111827;
+      --color-text-secondary: #6b7280;
+      --color-bg: #ffffff;
+      --max-width: 1200px;
+      --nav-height: 70px;
+      --transition-speed: 0.3s;
+      --shadow-light: rgba(0,0,0,0.05);
+      --border-radius: 0.75rem;
+    }
+    /* Reset */
+    *, *::before, *::after {
       box-sizing: border-box;
     }
     body {
-      font-family: 'Poppins', sans-serif;
       margin: 0;
-      background: linear-gradient(135deg, #fff8f0 40%, #ffe8d6 100%);
-      color: #333;
-      overflow-x: hidden;
-      line-height: 1.6;
-      font-weight: 300;
+      font-family: 'Poppins', sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text-secondary);
+      line-height: 1.75;
+      font-weight: 400;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      -webkit-font-feature-settings: "pnum", "onum";
+      font-feature-settings: "pnum", "onum";
+      font-variant-numeric: proportional-nums;
     }
-    /* Header and footer styling */
-    header, footer {
-      background-color: #b22222;
-      color: white;
-      text-align: center;
-      padding: 32px 20px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgb(178 34 34 / 0.5);
-      animation: fadeInDown 1s ease forwards;
-    }
-    header h1 {
-      font-weight: 600;
-      font-size: 2.8rem;
-      margin: 0 0 10px;
-      letter-spacing: 1px;
-      text-shadow: 1px 1px 2px #660000;
-    }
-    .tagline {
-      font-weight: 300;
-      font-size: 1.2rem;
-      font-style: italic;
-      letter-spacing: 0.05em;
-      opacity: 0.85;
-    }
-    footer p {
-      margin: 6px 0;
-      font-size: 1rem;
-      font-weight: 300;
-      letter-spacing: 0.05em;
-    }
-    /* Navigation styling */
-    nav {
-      display: flex;
-      justify-content: center;
-      background: #ff7f50;
-      flex-wrap: wrap;
-      box-shadow: 0 2px 10px rgb(255 127 80 / 0.5);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      animation: slideDown 0.7s ease forwards;
-    }
-    nav a {
-      flex: 1 0 auto;
-      max-width: 140px;
-      text-align: center;
-      color: white;
-      padding: 18px 15px;
+    a {
+      color: var(--color-primary);
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      letter-spacing: 0.05em;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      position: relative;
-      overflow: hidden;
+      transition: color var(--transition-speed);
     }
-    nav a::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: 6px;
-      width: 0;
-      height: 3px;
-      background: #b22222;
-      transition: width 0.3s ease, left 0.3s ease;
-      border-radius: 3px;
-    }
-    nav a:hover,
-    nav a:focus {
-      background-color: #cd5c5c;
-      transform: scale(1.1);
+    a:hover,
+    a:focus {
+      color: #7a1010;
       outline: none;
     }
-    nav a:hover::after,
-    nav a:focus::after {
-      width: 80%;
-      left: 10%;
+    /* Sticky minimal nav */
+    nav {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: var(--nav-height);
+      background: rgba(255 255 255 / 0.95);
+      backdrop-filter: saturate(180%) blur(10px);
+      box-shadow: 0 2px 6px var(--shadow-light);
+      z-index: 1000;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
     }
-    nav a.active {
-      background-color: #b22222;
+    .nav-container {
+      max-width: var(--max-width);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+    .logo {
+      height: 60px;
+      width: auto;
+      cursor: pointer;
+      user-select: none;
+      display: block;
+      transition: transform 0.2s ease;
+    }
+    .logo:hover,
+    .logo:focus {
+      transform: scale(1.05);
+      outline: none;
+    }
+    ul.nav-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 28px;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--color-text-primary);
+    }
+    ul.nav-links li a {
+      color: var(--color-text-primary);
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background-color var(--transition-speed), color var(--transition-speed), transform var(--transition-speed);
+      display: inline-block;
+      text-decoration: none;
+      user-select: none;
+    }
+    ul.nav-links li a:hover,
+    ul.nav-links li a:focus {
+      background-color: var(--color-primary);
+      color: white;
+      outline: none;
+      box-shadow: 0 4px 12px rgb(178 34 34 / 0.3);
+      transform: scale(1.1);
+    }
+    ul.nav-links li a.active {
       font-weight: 700;
+      color: var(--color-primary);
+      position: relative;
     }
-    nav a.active::after {
-      width: 80%;
-      left: 10%;
-      background-color: #fff8f0;
+    ul.nav-links li a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--color-primary);
+      border-radius: 2px;
     }
-    /* Main content section styling */
-    section {
-      background: white;
-      max-width: 900px;
-      margin: 40px auto 60px;
-      padding: 40px 45px;
-      border-radius: 14px;
-      box-shadow: 0 20px 40px rgb(178 34 34 / 0.15);
+
+    /* Header */
+    header.main-header {
+      max-width: var(--max-width);
+      margin: 96px auto 48px;
+      padding: 0 24px;
+      text-align: left;
+      color: var(--color-text-primary);
+      user-select: none;
+      position: relative;
       opacity: 0;
       transform: translateY(30px);
-      animation: fadeInUp 1s ease forwards;
-      animation-delay: 0.3s;
-      will-change: transform, opacity;
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
-    /* Animate multiple paragraphs with delay */
-    section p, section h2, section h3, section ul {
+    header.main-header.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    header.main-header h1 {
+      font-weight: 800;
+      font-size: 4rem;
+      margin: 0;
+      line-height: 1.05;
+      letter-spacing: 0.05em;
+      padding-bottom: 0.3em;
+    }
+    header.main-header h1::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 5px;
+      background: var(--color-primary);
+      border-radius: 8px;
+      margin-top: 12px;
+    }
+    header.main-header p.tagline {
+      font-weight: 400;
+      font-size: 1.5rem;
+      margin-top: 12px;
+      max-width: 680px;
+      opacity: 0.7;
+      color: var(--color-text-secondary);
+      font-style: normal;
+      letter-spacing: 0.02em;
+    }
+
+    /* Section card container */
+    section.content-card {
+      background: #fff;
+      max-width: var(--max-width);
+      margin: 48px auto 96px;
+      padding: 48px 56px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 10px 30px var(--shadow-light);
+      color: var(--color-text-primary);
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.8;
+      letter-spacing: 0.01em;
+      user-select: text;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    section.content-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    section.content-card h2,
+    section.content-card h3,
+    section.content-card p,
+    section.content-card ul {
       opacity: 0;
       transform: translateY(20px);
-      animation: fadeInUp 0.7s ease forwards;
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
-    section h2 {
-      font-size: 2.4rem;
-      font-weight: 600;
-      margin-top: 0;
-      margin-bottom: 0.4em;
-      color: #b22222;
-      letter-spacing: 0.04em;
-      text-shadow: 0 1px 3px #8b0000aa;
+    section.content-card.visible h2,
+    section.content-card.visible h3,
+    section.content-card.visible p,
+    section.content-card.visible ul {
+      opacity: 1;
+      transform: translateY(0);
     }
-    section h3 {
-      margin-top: 40px;
-      font-weight: 600;
-      font-size: 1.6rem;
-      color: #b22222;
+    section.content-card h2 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 36px;
+      color: var(--color-primary);
       letter-spacing: 0.03em;
-      text-shadow: 0 1px 2px #8b000099;
+      transition-delay: 0.1s;
     }
-    section p:nth-of-type(1) {
-      animation-delay: 0.4s;
-    }
-    section p:nth-of-type(2) {
-      animation-delay: 0.7s;
-    }
-    section p:nth-of-type(3) {
-      animation-delay: 1s;
-    }
-    section p:nth-of-type(4) {
-      animation-delay: 1.3s;
-    }
-    section p:nth-of-type(5) {
-      animation-delay: 1.6s;
-    }
-    section ul {
-      margin-top: 15px;
-      list-style: none;
-      padding-left: 0;
-      animation-delay: 2s;
-    }
-    section ul li {
-      font-size: 1.1rem;
-      margin-bottom: 12px;
-      position: relative;
-      padding-left: 28px;
-      font-weight: 500;
-      cursor: default;
-      transition: color 0.25s ease;
-    }
-    section ul li::before {
-      content: "✅";
-      position: absolute;
-      left: 0;
-      top: 2px;
-      font-size: 1.3rem;
-      color: #b22222;
-      transition: transform 0.3s ease;
-    }
-    section ul li:hover {
-      color: #b22222;
-    }
-    section ul li:hover::before {
-      transform: scale(1.4);
-    }
-    /* Highlight class */
-    .highlight {
-      color: #b22222;
+    section.content-card h3 {
       font-weight: 600;
+      font-size: 1.8rem;
+      margin-top: 64px;
+      margin-bottom: 20px;
+      color: var(--color-primary);
+      letter-spacing: 0.02em;
+      transition-delay: 0.25s;
+    }
+    section.content-card p {
+      margin-bottom: 24px;
+      color: var(--color-text-secondary);
+      font-weight: 400;
+      transition-delay: 0.4s;
+    }
+    section.content-card p:nth-child(5) {
+      transition-delay: 0.5s;
+    }
+    section.content-card p:nth-child(6) {
+      transition-delay: 0.6s;
+    }
+    section.content-card p:nth-child(7) {
+      transition-delay: 0.7s;
+    }
+    section.content-card p strong {
+      color: var(--color-primary);
+    }
+    .highlight {
+      color: var(--color-primary);
+      font-weight: 700;
       position: relative;
+      cursor: default;
+      transition: color 0.3s ease;
     }
     .highlight::after {
       content: "";
       position: absolute;
-      bottom: 2px;
+      bottom: 3px;
       left: 0;
       width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, #ff7f50, #b22222);
-      border-radius: 2px;
-      opacity: 0.5;
+      height: 6px;
+      background: linear-gradient(90deg, var(--color-primary), #ff7f50);
+      border-radius: 4px;
+      opacity: 0.4;
       pointer-events: none;
       transform: scaleX(0);
       transform-origin: left;
-      transition: transform 0.3s ease;
+      transition: transform 0.35s ease, opacity 0.35s ease;
+      z-index: -1;
     }
     .highlight:hover::after {
       transform: scaleX(1);
-      opacity: 1;
+      opacity: 0.7;
     }
+    /* Feature list in flexible columns */
+    ul.feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px 48px;
+      padding-left: 0;
+      list-style: none;
+      padding-top: 8px;
+      margin-top: 8px;
+      color: var(--color-text-secondary);
+      transition-delay: 0.9s;
+    }
+    ul.feature-list li {
+      position: relative;
+      padding-left: 36px;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.6;
+      cursor: default;
+      user-select: text;
+      transition: color 0.3s ease;
+    }
+    ul.feature-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: calc(50% - 11px);
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--color-primary);
+      transition: transform 0.3s ease;
+    }
+    ul.feature-list li:hover {
+      color: var(--color-primary);
+    }
+    ul.feature-list li:hover::before {
+      transform: scale(1.4);
+    }
+
+    /* Footer */
+    footer {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 32px 24px;
+      text-align: center;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--color-text-secondary);
+      border-top: 1px solid rgba(0,0,0,0.05);
+      user-select: none;
+    }
+
+    /* Floating Call Button */
+    .floating-call {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: var(--color-primary);
+      color: white;
+      font-size: 1.8rem;
+      padding: 14px 18px;
+      border-radius: 50%;
+      box-shadow: 0 8px 20px rgba(178,34,34,0.65);
+      text-decoration: none;
+      user-select: none;
+      cursor: pointer;
+      animation: pulse 2.5s infinite;
+      z-index: 1100;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .floating-call:hover, .floating-call:focus {
+      background-color: #7a1010;
+      box-shadow: 0 12px 30px rgba(178,34,34,0.9);
+      outline: none;
+      transform: scale(1.1);
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 8px 20px rgba(178,34,34,0.65); }
+      50% { transform: scale(1.15); box-shadow: 0 16px 30px rgba(178,34,34,0.85); }
+    }
+
     /* Responsive */
-    @media (max-width: 600px) {
-      nav a {
-        max-width: 100%;
-        flex: 1 1 50%;
-        padding: 14px;
+    @media (max-width: 700px) {
+      nav {
+        padding: 0 16px;
+      }
+      .nav-container {
+        gap: 8px;
+      }
+      ul.nav-links {
+        gap: 16px;
         font-size: 0.95rem;
       }
-      section {
-        margin: 30px 15px 50px;
-        padding: 30px 25px;
+      header.main-header {
+        margin: 64px 20px 32px;
+        text-align: center;
       }
-      header h1 {
-        font-size: 2rem;
+      header.main-header h1 {
+        font-size: 2.8rem;
       }
-      section h2 {
-        font-size: 1.8rem;
+      header.main-header p.tagline {
+        font-size: 1.1rem;
+        max-width: 100%;
       }
-      section h3 {
-        font-size: 1.3rem;
+      section.content-card {
+        margin: 32px 16px 64px;
+        padding: 32px 24px;
       }
-    }
-    /* Animations */
-    @keyframes fadeInDown {
-      0% {
-        opacity: 0;
-        transform: translateY(-25px);
+      section.content-card h2 {
+        font-size: 2.4rem;
       }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
+      section.content-card h3 {
+        font-size: 1.4rem;
+        margin-top: 48px;
+        margin-bottom: 16px;
       }
-    }
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-40px);
+      ul.feature-list {
+        grid-template-columns: 1fr;
+        gap: 16px;
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+      ul.feature-list li {
+        font-size: 1rem;
+        padding-left: 28px;
       }
-    }
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(25px);
+      ul.feature-list li::before {
+        font-size: 18px;
+        top: calc(50% - 9px);
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+      .floating-call {
+        bottom: 20px;
+        right: 20px;
+        font-size: 1.5rem;
+        padding: 12px 16px;
       }
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <header>
+  <nav role="navigation" aria-label="Primary navigation">
+    <div class="nav-container">
+      <a href="index.html" aria-label="Home">
+        <img src="images/logo.png" alt="Site Logo" class="logo" />
+      </a>
+      <ul class="nav-links" role="menubar">
+        <li><a href="index.html" role="menuitem">Home</a></li>
+        <li><a href="about.html" class="active" aria-current="page" role="menuitem">About</a></li>
+        <li><a href="tours.html" role="menuitem">Tour Packages</a></li>
+        <li><a href="gallery.html" role="menuitem">Gallery</a></li>
+        <li><a href="testimonials.html" role="menuitem">Testimonials</a></li>
+        <li><a href="contact.html" role="menuitem">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="main-header" role="banner">
     <h1>About Narendra Kumar Verma</h1>
     <p class="tagline">Certified Tourist Guide – 13 Years of Experience</p>
   </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html" class="active" aria-current="page">About</a>
-    <a href="tours.html">Tours</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="testimonials.html">Testimonials</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-
-  <section id="about-content" aria-label="About Narendra Kumar Verma">
-    <h2>Meet Your Guide</h2>
+  <section class="content-card" aria-labelledby="about-title">
+    <h2 id="about-title">Meet Your Guide</h2>
     <p>Hello! I'm <span class="highlight">Narendra Kumar Verma</span>, a certified tourist guide based in Agra. With over 13 years of experience, I offer insightful, safe, and memorable tours to both local and international visitors.</p>
 
-    <!-- Newly added About Me paragraph starts here -->
     <p>Not many people pursue a career in the same industry they once dreamed of. But I am proud to say that I am one of those few who have turned their passion into a profession—with immense joy, dedication, and enthusiasm.</p>
+
     <p>I have always seen tourism as a form of social service. Even today, as a professional, I strive to offer the best possible service to my guests from all around the world. I believe true service should never be compromised—regardless of the tour package provided by any travel agent.</p>
+
     <p>Please note, I am <strong>not</strong> charging anything extra from your travel agent. But it’s important to understand that a <span class="highlight">tour guide is the ambassador of a country</span>. A guide ensures your <strong>safety, comfort, and satisfaction</strong> during your journey—not just by showing you places, but by being available to share knowledge, assist in every way possible, and make your experience memorable.</p>
-    <!-- Newly added About Me paragraph ends here -->
 
     <p>I speak <strong>English</strong> fluently and am passionate about sharing the cultural and historical heritage of Agra. My license is certified by the Indian Government, ensuring you a professional and trustworthy experience.</p>
 
     <h3>Why Choose Me?</h3>
-    <ul role="list">
-      <li>✅ No agents or middlemen – direct contact and fair prices</li>
-      <li>✅ Personalized and private tours tailored to your interests</li>
-      <li>✅ Extensive local knowledge and storytelling</li>
-      <li>✅ Over 13 years guiding happy tourists from around the world</li>
+    <ul class="feature-list" role="list">
+      <li>No agents or middlemen – direct contact and fair prices</li>
+      <li>Personalized and private tours tailored to your interests</li>
+      <li>Extensive local knowledge and storytelling</li>
+      <li>Over 13 years guiding happy tourists from around the world</li>
     </ul>
   </section>
 
-  <footer>
+  <footer role="contentinfo">
     <p>&copy; 2025 Narendra Kumar Verma | Certified Tourist Guide, Agra</p>
     <p>Contact: +91 95578 24127 | travelhghts98@gmail.com</p>
   </footer>
 
+  <!-- Floating Call Button -->
+  <a href="tel:+919557824127" class="floating-call" title="Call Narendra Kumar Verma" aria-label="Call Narendra Kumar Verma">📞</a>
+
   <script>
-    // Scroll reveal animation for paragraphs and headings
+    // Intersection Observer for fade-in + slide-up scroll animations
     document.addEventListener('DOMContentLoaded', () => {
       const options = {
         threshold: 0.1
@@ -321,21 +465,24 @@
       const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.style.opacity = 1;
-            entry.target.style.transform = "translateY(0)";
+            entry.target.classList.add('visible');
             obs.unobserve(entry.target);
           }
         });
       }, options);
-      
-      const faders = document.querySelectorAll('section p, section h2, section h3, section ul');
-      faders.forEach(el => {
-        el.style.opacity = 0;
-        el.style.transform = "translateY(20px)";
-        observer.observe(el);
+
+      // Observe header and main content section for animation
+      const header = document.querySelector('header.main-header');
+      if(header) observer.observe(header);
+      const contentCard = document.querySelector('section.content-card');
+      if(contentCard) observer.observe(contentCard);
+
+      // Also animate child elements inside content-card with delays
+      const contentChildren = contentCard ? contentCard.querySelectorAll('h2, h3, p, ul') : [];
+      contentChildren.forEach((el, i) => {
+        el.style.transitionDelay = (0.15 + i * 0.15) + 's';
       });
     });
   </script>
 </body>
 </html>
-

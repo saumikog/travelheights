@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>Testimonials - Narendra Kumar Verma</title>
   <style>
     :root {
@@ -17,6 +17,9 @@
       --shadow-light: rgba(0,0,0,0.06);
       --border-radius: 0.75rem;
       --card-bg: #fff;
+      --font-family: 'Poppins', sans-serif;
+      --font-weight-regular: 400;
+      --font-weight-bold: 700;
     }
     /* Reset */
     *, *::before, *::after {
@@ -24,11 +27,11 @@
     }
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
+      font-family: var(--font-family);
       background: var(--bg-color);
       color: var(--color-text-secondary);
       line-height: 1.6;
-      font-weight: 400;
+      font-weight: var(--font-weight-regular);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
@@ -70,10 +73,12 @@
       user-select: none;
       display: block;
       transition: transform 0.2s ease;
+      border-radius: var(--border-radius);
     }
     .logo:hover, .logo:focus {
       transform: scale(1.05);
       outline: none;
+      box-shadow: 0 4px 12px rgba(178,34,34,0.3);
     }
     ul.nav-links {
       list-style: none;
@@ -81,7 +86,7 @@
       padding: 0;
       display: flex;
       gap: 28px;
-      font-weight: 600;
+      font-weight: var(--font-weight-bold);
       font-size: 1rem;
       color: var(--color-text-primary);
     }
@@ -98,11 +103,11 @@
       background-color: var(--color-primary);
       color: white;
       outline: none;
-      box-shadow: 0 4px 12px rgb(178 34 34 / 0.3);
+      box-shadow: 0 4px 12px rgba(178,34,34,0.3);
       transform: scale(1.1);
     }
     ul.nav-links li a.active {
-      font-weight: 700;
+      font-weight: var(--font-weight-bold);
       color: var(--color-primary);
       position: relative;
     }
@@ -128,7 +133,7 @@
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 0.8s ease, transform 0.8s ease;
-      font-weight: 700;
+      font-weight: var(--font-weight-bold);
       font-size: 48px;
       letter-spacing: 0.05em;
     }
@@ -163,9 +168,9 @@
       background: var(--card-bg);
       padding: 24px 32px;
       border-radius: var(--border-radius);
-      box-shadow: 0 12px 30px rgba(178, 34, 34, 0.08);
+      box-shadow: 0 12px 30px rgba(178,34,34,0.08);
       color: var(--color-text-primary);
-      font-weight: 400;
+      font-weight: var(--font-weight-regular);
       font-size: 1.1rem;
       line-height: 1.6;
       user-select: text;
@@ -182,7 +187,7 @@
     }
     article.testimonial .author {
       text-align: right;
-      font-weight: 700;
+      font-weight: var(--font-weight-bold);
       font-size: 1rem;
       color: var(--color-primary);
       user-select: none;
@@ -223,11 +228,11 @@
       outline: none;
       transform: scale(1.1);
     }
-    /* Animations */
     @keyframes pulse {
       0%, 100% { transform: scale(1); box-shadow: 0 8px 20px rgba(178,34,34,0.65); }
       50% { transform: scale(1.15); box-shadow: 0 16px 30px rgba(178,34,34,0.85); }
     }
+    /* Responsive */
     @media (max-width: 700px) {
       nav {
         padding: 0 16px;
@@ -275,7 +280,7 @@
     </div>
   </nav>
 
-  <header class="main-header" role="banner">
+  <header class="main-header" role="banner" tabindex="0">
     <h1>What Tourists Say</h1>
     <p class="tagline">Genuine Reviews from Happy Travellers</p>
   </header>

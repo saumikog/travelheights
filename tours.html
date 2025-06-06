@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>Tours - Narendra Kumar Verma</title>
   <style>
     :root {
@@ -16,6 +16,8 @@
       --transition-speed: 0.3s;
       --shadow-light: rgba(0,0,0,0.06);
       --border-radius: 0.75rem;
+      --font-family: 'Poppins', sans-serif;
+      --font-weight-bold: 700;
     }
     /* Reset */
     *, *::before, *::after {
@@ -24,7 +26,7 @@
     html, body {
       height: 100%;
       margin: 0;
-      font-family: 'Poppins', sans-serif;
+      font-family: var(--font-family);
       background: url('images/taj.jpg') no-repeat center center fixed;
       background-size: cover;
       color: var(--color-text-secondary);
@@ -86,11 +88,13 @@
       user-select: none;
       display: block;
       transition: transform 0.2s ease;
+      border-radius: var(--border-radius);
     }
     .logo:hover,
     .logo:focus {
       transform: scale(1.05);
       outline: none;
+      box-shadow: 0 4px 12px rgba(178,34,34,0.3);
     }
     ul.nav-links {
       list-style: none;
@@ -98,7 +102,7 @@
       padding: 0;
       display: flex;
       gap: 28px;
-      font-weight: 600;
+      font-weight: var(--font-weight-bold);
       font-size: 1rem;
       color: var(--color-text-primary);
     }
@@ -116,11 +120,11 @@
       background-color: var(--color-primary);
       color: white;
       outline: none;
-      box-shadow: 0 4px 12px rgb(178 34 34 / 0.3);
+      box-shadow: 0 4px 12px rgba(178, 34, 34, 0.3);
       transform: scale(1.1);
     }
     ul.nav-links li a.active {
-      font-weight: 700;
+      font-weight: var(--font-weight-bold);
       color: var(--color-primary);
       position: relative;
     }
@@ -147,19 +151,15 @@
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 0.8s ease, transform 0.8s ease;
-      text-shadow: 0 2px 6px rgba(255 255 255, 0.85);
+      text-shadow: 0 2px 6px rgba(255, 255, 255, 0.85);
+      font-weight: var(--font-weight-bold);
+      font-size: 4rem;
+      line-height: 1.05;
+      letter-spacing: 0.05em;
     }
     header.main-header.visible {
       opacity: 1;
       transform: translateY(0);
-    }
-    header.main-header h1 {
-      font-weight: 800;
-      font-size: 4rem;
-      margin: 0;
-      line-height: 1.05;
-      letter-spacing: 0.05em;
-      padding-bottom: 0.3em;
     }
     header.main-header h1::after {
       content: '';
@@ -180,7 +180,7 @@
       color: var(--color-text-primary);
       font-style: normal;
       letter-spacing: 0.02em;
-      text-shadow: 0 1px 3px rgba(255 255 255, 0.75);
+      text-shadow: 0 1px 3px rgba(255, 255, 255, 0.75);
     }
 
     /* Main content container */
@@ -189,7 +189,6 @@
       margin: 0 auto 80px;
       padding: 0 24px;
     }
-
     /* Card container for tours */
     .tour {
       background: rgba(255 255 255 / 0.9);
@@ -215,16 +214,18 @@
     }
     .tour h3 {
       color: var(--color-primary);
-      font-weight: 700;
+      font-weight: var(--font-weight-bold);
       margin-top: 0;
       margin-bottom: 0.5em;
       font-size: 1.75rem;
       text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+      user-select: text;
     }
     .tour p {
       margin: 0;
       color: var(--color-text-primary);
       text-shadow: 0 1px 2px rgba(255,255,255,0.7);
+      user-select: text;
     }
 
     /* Footer */
@@ -238,10 +239,38 @@
       color: var(--color-text-primary);
       border-top: 1px solid rgba(255, 255, 255, 0.3);
       user-select: none;
-      text-shadow: 0 1px 1px rgba(0,0,0,0.05);
+      background: #fff;
     }
 
-    /* Responsive */
+    /* Floating Call Button */
+    .floating-call {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: var(--color-primary);
+      color: white;
+      font-size: 1.8rem;
+      padding: 14px 18px;
+      border-radius: 50%;
+      box-shadow: 0 8px 20px rgba(178,34,34,0.65);
+      text-decoration: none;
+      user-select: none;
+      cursor: pointer;
+      animation: pulse 2.5s infinite;
+      z-index: 1100;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .floating-call:hover, .floating-call:focus {
+      background-color: var(--color-primary-dark);
+      box-shadow: 0 12px 30px rgba(178,34,34,0.9);
+      outline: none;
+      transform: scale(1.1);
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 8px 20px rgba(178,34,34,0.65); }
+      50% { transform: scale(1.15); box-shadow: 0 16px 30px rgba(178,34,34,0.85); }
+    }
     @media (max-width: 700px) {
       nav {
         padding: 0 16px;
@@ -271,36 +300,6 @@
       .tour h3 {
         font-size: 1.4rem;
       }
-    }
-
-    /* Floating Call Button (added) */
-    .floating-call {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: var(--color-primary);
-      color: white;
-      font-size: 1.8rem;
-      padding: 14px 18px;
-      border-radius: 50%;
-      box-shadow: 0 8px 20px rgba(178,34,34,0.65);
-      text-decoration: none;
-      user-select: none;
-      cursor: pointer;
-      animation: pulse 2.5s infinite;
-      z-index: 1100;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-    }
-    .floating-call:hover, .floating-call:focus {
-      background-color: var(--color-primary-dark);
-      box-shadow: 0 12px 30px rgba(178,34,34,0.9);
-      outline: none;
-      transform: scale(1.1);
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); box-shadow: 0 8px 20px rgba(178,34,34,0.65); }
-      50% { transform: scale(1.15); box-shadow: 0 16px 30px rgba(178,34,34,0.85); }
     }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet" />
@@ -376,4 +375,3 @@
   </script>
 </body>
 </html>
-

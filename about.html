@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>About - Narendra Kumar Verma</title>
   <style>
     :root {
@@ -15,6 +15,9 @@
       --transition-speed: 0.3s;
       --shadow-light: rgba(0,0,0,0.05);
       --border-radius: 0.75rem;
+      --font-family: 'Poppins', sans-serif;
+      --font-weight-bold: 700;
+      --font-weight-extra-bold: 800;
     }
     /* Reset */
     *, *::before, *::after {
@@ -22,7 +25,7 @@
     }
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
+      font-family: var(--font-family);
       background: var(--color-bg);
       color: var(--color-text-secondary);
       line-height: 1.75;
@@ -74,11 +77,13 @@
       user-select: none;
       display: block;
       transition: transform 0.2s ease;
+      border-radius: var(--border-radius);
     }
     .logo:hover,
     .logo:focus {
       transform: scale(1.05);
       outline: none;
+      box-shadow: 0 4px 12px rgba(178,34,34,0.3);
     }
     ul.nav-links {
       list-style: none;
@@ -86,7 +91,7 @@
       padding: 0;
       display: flex;
       gap: 28px;
-      font-weight: 600;
+      font-weight: var(--font-weight-bold);
       font-size: 1rem;
       color: var(--color-text-primary);
     }
@@ -104,11 +109,11 @@
       background-color: var(--color-primary);
       color: white;
       outline: none;
-      box-shadow: 0 4px 12px rgb(178 34 34 / 0.3);
+      box-shadow: 0 4px 12px rgba(178,34,34,0.3);
       transform: scale(1.1);
     }
     ul.nav-links li a.active {
-      font-weight: 700;
+      font-weight: var(--font-weight-bold);
       color: var(--color-primary);
       position: relative;
     }
@@ -141,12 +146,13 @@
       transform: translateY(0);
     }
     header.main-header h1 {
-      font-weight: 800;
+      font-weight: var(--font-weight-extra-bold);
       font-size: 4rem;
       margin: 0;
       line-height: 1.05;
       letter-spacing: 0.05em;
       padding-bottom: 0.3em;
+      user-select: text;
     }
     header.main-header h1::after {
       content: '';
@@ -166,11 +172,12 @@
       color: var(--color-text-secondary);
       font-style: normal;
       letter-spacing: 0.02em;
+      user-select: text;
     }
 
     /* Section card container */
     section.content-card {
-      background: #fff;
+      background: var(--color-bg);
       max-width: var(--max-width);
       margin: 48px auto 96px;
       padding: 48px 56px;
@@ -207,11 +214,12 @@
     }
     section.content-card h2 {
       font-size: 3.2rem;
-      font-weight: 700;
+      font-weight: var(--font-weight-bold);
       margin-bottom: 36px;
       color: var(--color-primary);
       letter-spacing: 0.03em;
       transition-delay: 0.1s;
+      user-select: text;
     }
     section.content-card h3 {
       font-weight: 600;
@@ -221,12 +229,14 @@
       color: var(--color-primary);
       letter-spacing: 0.02em;
       transition-delay: 0.25s;
+      user-select: text;
     }
     section.content-card p {
       margin-bottom: 24px;
       color: var(--color-text-secondary);
       font-weight: 400;
       transition-delay: 0.4s;
+      user-select: text;
     }
     section.content-card p:nth-child(5) {
       transition-delay: 0.5s;
@@ -239,13 +249,15 @@
     }
     section.content-card p strong {
       color: var(--color-primary);
+      user-select: text;
     }
     .highlight {
       color: var(--color-primary);
-      font-weight: 700;
+      font-weight: var(--font-weight-bold);
       position: relative;
       cursor: default;
       transition: color 0.3s ease;
+      user-select: text;
     }
     .highlight::after {
       content: "";
@@ -422,7 +434,7 @@
     </div>
   </nav>
 
-  <header class="main-header" role="banner">
+  <header class="main-header" role="banner" tabindex="0">
     <h1>About Narendra Kumar Verma</h1>
     <p class="tagline">Certified Tourist Guide – 13 Years of Experience</p>
   </header>
@@ -459,9 +471,7 @@
   <script>
     // Intersection Observer for fade-in + slide-up scroll animations
     document.addEventListener('DOMContentLoaded', () => {
-      const options = {
-        threshold: 0.1
-      };
+      const options = { threshold: 0.1 };
       const observer = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -486,3 +496,4 @@
   </script>
 </body>
 </html>
+

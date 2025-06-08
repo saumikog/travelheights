@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <title>Narendra Kumar Verma - Tourist Guide in Agra</title> 
-  <link rel="icon" type="image/png" href="images/logo.jpg">
-
+  <title>Narendra Kumar Verma - Tourist Guide in Agra</title>
+  
   <style>
     :root {
       --color-primary: #b22222;
@@ -67,6 +66,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 0 24px;
+      position: relative;
     }
     .logo {
       height: 60px;
@@ -128,6 +128,72 @@
       box-shadow: 0 2px 8px var(--color-primary);
     }
 
+    /* Three-dot menu button for mobile */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 2.4rem;
+      color: var(--color-text-primary);
+      user-select: none;
+      padding: 4px 8px;
+      border-radius: var(--border-radius);
+      transition: background-color var(--transition-speed), color var(--transition-speed);
+      position: relative;
+      z-index: 1100;
+    }
+    .menu-toggle:focus,
+    .menu-toggle:hover {
+      background-color: var(--color-primary);
+      color: white;
+      outline: none;
+      box-shadow: 0 4px 12px var(--shadow-strong);
+      transform: scale(1.1);
+    }
+    /* Dropdown menu container */
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: var(--nav-height);
+      right: 24px;
+      background: white;
+      border-radius: var(--border-radius);
+      box-shadow: 0 10px 24px rgba(178,34,34,0.3);
+      width: 200px;
+      padding: 8px 0;
+      user-select: none;
+      z-index: 1050;
+    }
+    .mobile-menu.open {
+      display: block;
+    }
+    .mobile-menu a {
+      display: block;
+      padding: 12px 20px;
+      color: var(--color-text-primary);
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 0;
+      transition: background-color var(--transition-speed), color var(--transition-speed);
+    }
+    .mobile-menu a:hover,
+    .mobile-menu a:focus {
+      background-color: var(--color-primary);
+      color: white;
+      outline: none;
+    }
+    /* Hide desktop nav on small screens */
+    @media (max-width: 700px) {
+      ul.nav-links {
+        display: none;
+      }
+      .menu-toggle {
+        display: inline-block;
+      }
+    }
+
+    /* Existing styles for content and footer unchanged */
     /* Header */
     header.main-header {
       max-width: var(--max-width);
@@ -239,10 +305,6 @@
       transform: translateY(-6px) scale(1.05);
       outline: none;
     }
-    .ticket-button:active {
-      transform: translateY(-3px) scale(1.03);
-      box-shadow: 0 8px 22px rgba(122,16,16,0.85);
-    }
 
     /* Floating graphics with subtle animation */
     .floating-graphic {
@@ -287,51 +349,51 @@
       }
     }
     .book-tickets {
-  background: rgba(255 255 255 / 0.9);
-  border-radius: 24px;
-  padding: 48px 56px;
-  box-shadow: 0 16px 48px rgba(178,34,34,0.15);
-  color: #111827;
-  font-weight: 600;
-  max-width: 640px;
-  margin: 0 auto 64px;
-  text-align: center;
-  opacity: 1; /* Ensure it's visible */
-  transform: none; /* Remove any unwanted transform */
-  transition: opacity 1s ease, transform 1s ease;
-}
-.ticket-buttons {
-  display: flex;
-  gap: 32px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.ticket-button {
-  background: #b22222;
-  color: white;
-  font-weight: 700;
-  font-size: 1.4rem;
-  padding: 20px 48px;
-  border-radius: 40px;
-  box-shadow: 0 8px 24px rgba(178,34,34,0.3);
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  min-width: 200px;
-  letter-spacing: 0.12em;
-  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
-  user-select: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-.ticket-button:hover,
-.ticket-button:focus {
-  background-color: #7a1010;
-  box-shadow: 0 12px 32px rgba(122,16,16,0.7);
-  transform: translateY(-6px) scale(1.05);
-  outline: none;
-}
+      background: rgba(255 255 255 / 0.9);
+      border-radius: 24px;
+      padding: 48px 56px;
+      box-shadow: 0 16px 48px rgba(178,34,34,0.15);
+      color: #111827;
+      font-weight: 600;
+      max-width: 640px;
+      margin: 0 auto 64px;
+      text-align: center;
+      opacity: 1; /* Ensure visible */
+      transform: none; /* Remove transform */
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .ticket-buttons {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .ticket-button {
+      background: #b22222;
+      color: white;
+      font-weight: 700;
+      font-size: 1.4rem;
+      padding: 20px 48px;
+      border-radius: 40px;
+      box-shadow: 0 8px 24px rgba(178,34,34,0.3);
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      min-width: 200px;
+      letter-spacing: 0.12em;
+      transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      user-select: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ticket-button:hover,
+    .ticket-button:focus {
+      background-color: #7a1010;
+      box-shadow: 0 12px 32px rgba(122,16,16,0.7);
+      transform: translateY(-6px) scale(1.05);
+      outline: none;
+    }
 
     /* Footer */
     footer {
@@ -433,14 +495,27 @@
       <a href="index.html" aria-label="Home">
         <img src="images/logo.jpg" alt="Site Logo" class="logo" />
       </a>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="tours.html">Tour Packages</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="contact.html">Contact</a></li>
+
+      <ul class="nav-links" role="menubar" aria-label="Primary navigation links">
+        <li><a href="index.html" class="active" aria-current="page" role="menuitem">Home</a></li>
+        <li><a href="about.html" role="menuitem">About</a></li>
+        <li><a href="tours.html" role="menuitem">Tour Packages</a></li>
+        <li><a href="gallery.html" role="menuitem">Gallery</a></li>
+        <li><a href="testimonials.html" role="menuitem">Testimonials</a></li>
+        <li><a href="contact.html" role="menuitem">Contact</a></li>
       </ul>
+
+      <button aria-label="Toggle menu" aria-haspopup="true" aria-expanded="false" class="menu-toggle">
+        &#8942;
+      </button>
+      <div class="mobile-menu" role="menu" aria-label="Mobile navigation menu">
+        <a href="index.html" role="menuitem" tabindex="-1">Home</a>
+        <a href="about.html" role="menuitem" tabindex="-1">About</a>
+        <a href="tours.html" role="menuitem" tabindex="-1">Tour Packages</a>
+        <a href="gallery.html" role="menuitem" tabindex="-1">Gallery</a>
+        <a href="testimonials.html" role="menuitem" tabindex="-1">Testimonials</a>
+        <a href="contact.html" role="menuitem" tabindex="-1">Contact</a>
+      </div>
     </div>
   </nav>
 
@@ -496,6 +571,46 @@
       const tours = document.querySelectorAll('.tour');
       tours.forEach(tour => observer.observe(tour));
     });
+
+    // Mobile menu toggle logic
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    if(menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', isOpen);
+        // Manage tab focus for menu items
+        const links = mobileMenu.querySelectorAll('a');
+        links.forEach(link => {
+          link.tabIndex = isOpen ? 0 : -1;
+        });
+      });
+
+      // Close menu if clicking outside
+      document.addEventListener('click', (e) => {
+        if(!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+          if(mobileMenu.classList.contains('open')) {
+            mobileMenu.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', false);
+            const links = mobileMenu.querySelectorAll('a');
+            links.forEach(link => { link.tabIndex = -1; });
+          }
+        }
+      });
+
+      // Close menu on Escape key
+      document.addEventListener('keydown', (e) => {
+        if(e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+          mobileMenu.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded', false);
+          const links = mobileMenu.querySelectorAll('a');
+          links.forEach(link => { link.tabIndex = -1; });
+          menuToggle.focus();
+        }
+      });
+    }
   </script>
 </body>
 </html>
+

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rate & Review - Travel Heights</title>
+  <link rel="icon" type="image/png" href="images/logo.jpg" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary-color: #0d47a1;
+      --secondary-color: #1976d2;
+      --accent-color: #42a5f5;
+      --bg-color: #f9f9f9;
+      --text-color: #212121;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      scroll-behavior: smooth;
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--primary-color);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: var(--accent-color);
+    }
+
+    .main-header {
+      text-align: center;
+      padding: 3rem 1rem 1rem;
+      background-color: var(--white);
+    }
+
+    .main-header h1 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      color: var(--secondary-color);
+      margin-top: 0.5rem;
+    }
+
+    .form-section {
+      padding: 2rem;
+      max-width: 600px;
+      margin: 2rem auto;
+      background-color: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    }
+
+    .input-box {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .input-box input,
+    .input-box textarea,
+    .input-box select {
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: none;
+      outline: none;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+
+    .input-box label {
+      position: absolute;
+      top: 50%;
+      left: 1rem;
+      transform: translateY(-50%);
+      background-color: var(--white);
+      padding: 0 0.3rem;
+      color: #888;
+      pointer-events: none;
+      transition: 0.3s ease all;
+    }
+
+    .input-box input:focus + label,
+    .input-box textarea:focus + label,
+    .input-box input:not(:placeholder-shown) + label,
+    .input-box textarea:not(:placeholder-shown) + label {
+      top: -0.6rem;
+      left: 0.8rem;
+      font-size: 0.8rem;
+      color: var(--secondary-color);
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .submit-btn {
+      background-color: var(--secondary-color);
+      color: var(--white);
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--accent-color);
+    }
+
+    .floating-call {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--accent-color);
+      color: var(--white);
+      font-size: 1.5rem;
+      padding: 0.6rem 1rem;
+      border-radius: 50%;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    footer {
+      background-color: var(--primary-color);
+      color: var(--white);
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 2rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .form-section {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav-container">
+    <a href="index.html" aria-label="Home">
+      <img src="images/logo.jpg" alt="Site Logo" class="logo" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="packages.html">Packages</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="review.html" class="active">Review</a></li>
+    </ul>
+  </nav>
+
+  <header class="main-header">
+    <h1>Rate Your Experience</h1>
+    <p class="tagline">Your feedback helps us improve and serve you better!</p>
+  </header>
+
+  <section class="form-section">
+    <form action="https://formspree.io/f/xwkgyayg" method="POST">
+      <div class="input-box">
+        <input type="text" name="name" id="name" required placeholder=" " />
+        <label for="name">Full Name</label>
+      </div>
+      <div class="input-box">
+        <input type="email" name="email" id="email" required placeholder=" " />
+        <label for="email">Email</label>
+      </div>
+      <div class="input-box">
+        <select name="rating" id="rating" required>
+          <option value="" disabled selected hidden>Rate Us</option>
+          <option value="5 Stars">⭐⭐⭐⭐⭐ Excellent</option>
+          <option value="4 Stars">⭐⭐⭐⭐ Good</option>
+          <option value="3 Stars">⭐⭐⭐ Average</option>
+          <option value="2 Stars">⭐⭐ Needs Improvement</option>
+          <option value="1 Star">⭐ Poor</option>
+        </select>
+      </div>
+      <div class="input-box">
+        <textarea name="message" id="message" rows="5" required placeholder=" "></textarea>
+        <label for="message">Write your review...</label>
+      </div>
+      <button type="submit" class="submit-btn">Submit Review</button>
+    </form>
+  </section>
+
+  <a href="tel:+911234567890" class="floating-call" title="Call Us">📞</a>
+
+  <footer>
+    &copy; 2025 Travel Heights. All rights reserved.
+  </footer>
+
+</body>
+</html>

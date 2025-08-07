@@ -501,54 +501,45 @@
   </header>
 
   <main>
-    <form class="review-form" aria-label="Review form">
-      <div>
-        <input type="text" id="name" name="name" placeholder=" " required autocomplete="name" />
-        <label for="name" class="floating-label">Your Name</label>
-      </div>
-      <div>
-        <input type="email" id="email" name="email" placeholder=" " required autocomplete="email" />
-        <label for="email" class="floating-label">Your Email</label>
-      </div>
-      <div>
-        <select id="rating" name="rating" required>
-          <option value="" disabled selected>Select Rating</option>
-          <option value="5">★★★★★ - Excellent</option>
-          <option value="4">★★★★☆ - Very Good</option>
-          <option value="3">★★★☆☆ - Good</option>
-          <option value="2">★★☆☆☆ - Fair</option>
-          <option value="1">★☆☆☆☆ - Poor</option>
-        </select>
-        <label for="rating" class="floating-label">Rating</label>
-      </div>
-      <div>
-        <textarea id="review" name="review" placeholder=" " rows="5" required></textarea>
-        <label for="review" class="floating-label">Your Review</label>
-      </div>
-      <button type="submit" aria-label="Submit your review">Submit Review</button>
-    </form>
-  </main>
+    <main>
+  <form action="https://formsubmit.co/saumikverma2009@gmail.com" method="POST" class="review-form">
+    <!-- Hidden config -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_subject" value="New Tour Review!">
 
-  <section class="testimonials-section" aria-labelledby="existing-testimonials">
-    <h2 id="existing-testimonials">What Others Say</h2>
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="rating-stars">★★★★★</div>
-        <p>"Narendra is the best guide we've ever had. His stories, historical details, and friendly nature made our trip unforgettable!"</p>
-        <p class="author">– Emily, UK</p>
-      </div>
-      
-      <div class="testimonial-card">
-        <div class="rating-stars">★★★★★</div>
-        <p>"A wonderful experience! Narendra took care of everything and shared great insights about the monuments. Highly recommend!"</p>
-        <p class="author">– Juan, Spain</p>
-      </div>
-      
-      <div class="testimonial-card">
-        <div class="rating-stars">★★★★★</div>
-        <p>"Very professional and warm person. His English was perfect, and he showed us local spots that we wouldn't have discovered otherwise."</p>
-        <p class="author">– Lena & Alex, Germany</p>
-      </div>
+    <div>
+      <input type="text" name="name" placeholder=" " required />
+      <label class="floating-label">Your Name</label>
+    </div>
+
+    <div>
+      <input type="email" name="email" placeholder=" " required />
+      <label class="floating-label">Your Email</label>
+    </div>
+
+    <div>
+      <select name="rating" required>
+        <option value="" disabled selected>Select Rating</option>
+        <option value="5">★★★★★ - Excellent</option>
+        <option value="4">★★★★☆ - Very Good</option>
+        <option value="3">★★★☆☆ - Good</option>
+        <option value="2">★★☆☆☆ - Fair</option>
+        <option value="1">★☆☆☆☆ - Poor</option>
+      </select>
+      <label class="floating-label">Rating</label>
+    </div>
+
+    <div>
+      <textarea name="review" placeholder=" " rows="5" required></textarea>
+      <label class="floating-label">Your Review</label>
+    </div>
+
+    <button type="submit">Submit Review</button>
+  </form>
+</main>
+
+
     </div>
   </section>
 
@@ -588,5 +579,10 @@
       elementsToAnimate.forEach(el => observer.observe(el));
     });
   </script>
+
+   
+</script>
+
 </body>
 </html>
+

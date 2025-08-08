@@ -61,9 +61,10 @@
   <section class="hero slideshow">
     <!-- Slides will be injected via JS -->
     <div class="hero-content">
-      <h1 class="hero-title"> Taj / Fort Same Day Tour</h1>
-      <h2 class="hero-subtitle">With Narendra Kumar Verma</h2>
-    </div>
+  <h1 class="hero-title">Taj / Fort Same Day Tour</h1>
+  <h2 class="hero-subtitle">With Narendra Kumar Verma</h2>
+</div>
+
   </section>
   <div class="sliding-bar">
   <p>I'm Narendra Kumar Verma, a certified tourist guide based in Agra with over 13 years of experience. I provide English-speaking guides for the 7th Wonder — the Taj Mahal — and Agra Fort. Through this site, you can easily book your guided tour appointment. Contact me now for your guided Tour. NO ONLINE BOOKING - NO RISK</p>
@@ -136,30 +137,30 @@
     const toggle = document.querySelector('.menu-toggle'),
           mobile = document.querySelector('.mobile-menu');
     toggle.addEventListener('click', () => mobile.classList.toggle('open'));
-
     const hero = document.querySelector('.hero.slideshow');
-    const heroText = document.querySelector('.hero-content');
-    const images = [
-      'images/1.jpg',
-      'images/2.jpg',
-      'images/taj.jpg',
-      'images/itmad-ud-daula.jpg',
-      'images/taj-mahal.jpg',
-      'images/agra-fort.jpg'
-    ];
+const images = [
+  'images/taj-mahal.jpg',
+  'https://images.pexels.com/photos/7263943/pexels-photo-7263943.jpeg',
+  'images/itmad-ud-daula.jpg',
+  'https://images.unsplash.com/photo-1591018653367-9c01498b3320?q=80&w=1170&auto=format&fit=crop',
+  'images/thumbnail.png'
+];
 
-    let idx = 0;
-    function showSlide() {
-      hero.style.opacity = 0;
-      setTimeout(() => {
-        hero.style.backgroundImage = `url('${images[idx]}')`;
-        hero.style.opacity = 1;
-      }, 300);
-      idx = (idx + 1) % images.length;
-    }
+let idx = 0;
+hero.style.transition = "opacity 1.2s ease-in-out";
 
-    showSlide();
-    setInterval(showSlide, 5000);
+function showSlide() {
+  hero.style.opacity = 0;
+  setTimeout(() => {
+    hero.style.backgroundImage = `url('${images[idx]}')`;
+    hero.style.opacity = 1;
+  }, 600);
+  idx = (idx + 1) % images.length;
+}
+
+showSlide();
+setInterval(showSlide, 5000);
+
   </script>
 <script>
   window.addEventListener('load', function () {

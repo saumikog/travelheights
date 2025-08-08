@@ -33,8 +33,14 @@
   <nav>
     <div class="container nav-container">
       <a href="index.html"><img src="images/logo.jpg" alt="Logo" class="logo"></a>
-      <button class="menu-toggle">☰</button>
+      <a href="booktour.html" class="book-tour-btn">Book Tour</a>
+      <button class="menu-toggle" aria-label="Open Menu">
+  ☰
+  <span class="menu-arrow">➜</span>
+</button>
+
       <ul class="nav-links">
+        
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="tours.html" class="tour-highlight">Tour Packages</a></li>
@@ -226,6 +232,10 @@ setInterval(showSlide, 5000);
       splash.style.pointerEvents = 'none';
     }, 2000);
   });
+  const toggle = document.querySelector('.menu-toggle'),
+      mobile = document.querySelector('.mobile-menu');
+toggle.addEventListener('click', () => mobile.classList.toggle('open'));
+
 </script>
 
 

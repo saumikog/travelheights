@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Book Tour - Narendra Kumar Verma</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="images/logo.jpg" type="image/jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Center hero content */
+    .coming-soon-section {
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, #1a1a1a, #333);
+      color: white;
+      overflow: hidden;
+      position: relative;
+    }
+    /* Floating animated shapes */
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 165, 0, 0.3);
+      animation: float 8s infinite ease-in-out;
+      z-index: 0;
+    }
+    .shape:nth-child(1) { width: 150px; height: 150px; top: 10%; left: 15%; animation-delay: 0s; }
+    .shape:nth-child(2) { width: 200px; height: 200px; bottom: 15%; right: 10%; animation-delay: 2s; }
+    .shape:nth-child(3) { width: 100px; height: 100px; bottom: 30%; left: 5%; animation-delay: 4s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-30px) rotate(180deg); }
+    }
+
+    /* Heading animation */
+    .coming-soon-section h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffcc00;
+      text-shadow: 2px 2px 10px rgba(255, 204, 0, 0.7);
+      animation: glow 2s infinite alternate;
+      z-index: 1;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff9900; }
+      to { text-shadow: 0 0 20px #fff176, 0 0 40px #ffcc00; }
+    }
+
+    /* Subtext */
+    .coming-soon-section p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      color: #eaeaea;
+      z-index: 1;
+    }
+
+    /* Button */
+    .tour-btn {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: white;
+      background: linear-gradient(90deg, #ff9900, #ffcc00);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);
+      animation: pulse 1.5s infinite;
+      text-decoration: none;
+      z-index: 1;
+    }
+    /* Floating Call Button */
+.floating-call {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(45deg, #ff9900, #ffcc00);
+  color: white;
+  font-size: 1.8rem;
+  padding: 12px 16px;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(255, 153, 0, 0.6);
+  text-decoration: none;
+  z-index: 1000;
+  animation: callPulse 1.5s infinite;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.floating-call:hover {
+  transform: scale(1.1);
+  background: linear-gradient(45deg, #ffcc00, #ff9900);
+}
+
+@keyframes callPulse {
+  0% { box-shadow: 0 0 10px rgba(255, 204, 0, 0.7); }
+  50% { box-shadow: 0 0 25px rgba(255, 204, 0, 1); }
+  100% { box-shadow: 0 0 10px rgba(255, 204, 0, 0.7); }
+}
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 15px rgba(255, 204, 0, 0.6); }
+      50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(255, 204, 0, 0.9); }
+      100% { transform: scale(1); box-shadow: 0 0 15px rgba(255, 204, 0, 0.6); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION (Same as index) -->
+<nav>
+  <div class="container nav-container">
+    <a href="index.html"><img src="images/logo.jpg" alt="Logo" class="logo"></a>
+    <button class="menu-toggle">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="tours.html" class="tour-highlight">Tour Packages</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="review.html">Rate & Review</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="mobile-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="tours.html" class="tour-highlight">Tour Packages</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="review.html">Rate & Review</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</nav>
+<!-- Floating Call Button -->
+<a href="tel:+919557824127" class="floating-call" title="Call Now" aria-label="Call Now">
+    📞
+</a>
+
+
+<!-- Floating Review Button -->
+<a href="review.html" class="floating-review" title="Leave a Review" aria-label="Leave a Review">📝 Give Us a Review</a>
+
+<!-- Coming Soon Section -->
+<section class="coming-soon-section">
+  <div class="shape"></div>
+  <div class="shape"></div>
+  <div class="shape"></div>
+  <h1>🚧 We are working on it!</h1>
+  <p>Our new Book Tour feature will be live soon.</p>
+  <a href="tours.html" class="tour-btn">✨ Till then, check Tour Packages</a>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h3>CONTACT US</h3>
+      <p><i class="fa fa-map-marker"></i> Agra</p>
+      <p><i class="fa fa-phone"></i> +91 9557824127</p>
+      <p><i class="fa fa-envelope"></i> travelhghts98@gmail.com</p>
+    </div>
+    <div class="footer-col">
+      <h3>QUICK LINKS</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="same-day-tours.html">Same Day Tours</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="review.html">Review</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>POPULAR TOURS</h3>
+      <ul>
+        <li>Same Day Agra Tour by Car</li>
+        <li>Same Day Agra Tour By Gatimaan Express</li>
+        <li>Same Day Agra Tour by Shatabdi Express</li>
+        <li>Agra Sunrise Tour by Car</li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script>
+  const toggle = document.querySelector('.menu-toggle'),
+        mobile = document.querySelector('.mobile-menu');
+  toggle.addEventListener('click', () => mobile.classList.toggle('open'));
+</script>
+
+</body>
+</html>

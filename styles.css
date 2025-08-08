@@ -64,56 +64,51 @@ nav ul a:hover, nav ul a.active { background: var(--color-secondary); color: #ff
   position: absolute; inset: 0;
   background: rgba(0,0,0,0.4);
 }
-.hero-content h1 {
-  font-family: var(--font-heading);
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: inherit; /* will be dynamically updated */
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.9), -1px -1px 4px rgba(255,255,255,0.1);
-  transition: text-shadow 0.5s ease, color 1s ease;
-}
-
-.hero-content p {
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: inherit; /* will be dynamically updated */
-  text-shadow: 1px 1px 6px rgba(0,0,0,0.8), -1px -1px 3px rgba(255,255,255,0.1);
-  transition: text-shadow 0.5s ease, color 1s ease;
-}
 /* === Enhanced Hero Title and Subtitle === */
+/* --- Unified Hero Heading & Subtitle Style --- */
 .hero-title {
-  font-size: 4.5rem;
-  font-weight: 800;
-  color: #1c1c1c;
-  text-shadow:
-    1.5px 1.5px 0 #ffffff,
-   -1.5px 1.5px 0 #ffffff,
-    1.5px -1.5px 0 #ffffff,
-   -1.5px -1.5px 0 #ffffff;
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: #FFD700; /* Gold */
+  text-align: center;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.85);
+  margin-bottom: 0.5rem;
 }
 
 .hero-subtitle {
-  font-size: 2rem;
-  font-weight: 600;
-  color: black;
-  text-shadow:
-    1.5px 1.5px 0 #ffffff,
-   -1.5px 1.5px 0 #ffffff,
-    1.5px -1.5px 0 #ffffff,
-   -1.5px -1.5px 0 #ffffff;
-  transition: color var(--transition), text-shadow var(--transition);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #f8f7f6; /* Gold */
+  text-align: center;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.85);
 }
 
-/* Optional Responsive Adjustments */
 @media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.8rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.4rem;
-  }
+  .hero-title { font-size: 2.4rem; }
+  .hero-subtitle { font-size: 1.3rem; }
 }
+
+/* --- Smooth Slideshow Image Transitions --- */
+.hero.slideshow {
+  position: relative;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1.5s ease-in-out; /* Smooth fade */
+}
+
+/* Optional fade effect for content inside hero */
+.hero-content {
+  animation: heroFade 1.5s ease-in-out;
+}
+
+@keyframes heroFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 
 .btn { display: inline-block; background: var(--color-primary); color: #fff; padding: 12px 32px; border-radius: 4px; transition: background var(--transition); }
 .btn:hover { background: var(--color-secondary); }
@@ -180,7 +175,7 @@ nav {
 .hero-content h1 {
   font-size: 3.5rem;
   font-weight: 700;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 6px rgb(244, 177, 9);
 }
 
 .hero-content p {

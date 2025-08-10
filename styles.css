@@ -883,3 +883,14 @@ footer {
     z-index: 1001;
   }
 }
+/* Desktop fix: align Book Tour button without overlap */
+@media (min-width: 769px) {
+  .book-tour-btn {
+    position: static;
+    transform: none;
+    margin-left: 20px; /* space from logo */
+    padding: 8px 16px;
+    font-size: 0.95rem;
+  }
+}
+

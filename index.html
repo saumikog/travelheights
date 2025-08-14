@@ -149,8 +149,8 @@ const images = [
   'images/taj-mahal.jpg',
   'https://images.pexels.com/photos/7263943/pexels-photo-7263943.jpeg',
   'images/itmad-ud-daula.jpg',
-  'https://images.unsplash.com/photo-1591018653367-9c01498b3320?q=80&w=1170&auto=format&fit=crop',
-  'images/thumbnail.png'
+  'https://images.unsplash.com/photo-1591018653367-9c01498b3320?q=80&w=1170&auto=format&fit=crop'
+  
 ];
 
 let idx = 0;
@@ -243,10 +243,41 @@ setInterval(showSlide, 5000);
 toggle.addEventListener('click', () => mobile.classList.toggle('open'));
 
 </script>
+<!-- Independence Day Poster Popup -->
+<div id="poster-popup">
+  <div class="poster-content">
+    <span class="close-poster">&times;</span>
+    <img src="https://www.hindustantimes.com/ht-img/img/2025/08/11/original/1600w-awDwQxfpeyI_1754899171756.webp"
+         alt="Happy Independence Day">
+  </div>
+</div>
+
+<script>
+(function(){
+    const today = new Date();
+    const hideAfter = new Date("2025-08-17");
+    const popup = document.getElementById("poster-popup");
+    const closeBtn = document.querySelector(".close-poster");
+
+    // Show only before 17 August
+    if (today < hideAfter) {
+        window.addEventListener('load', () => {
+            popup.style.display = "flex";
+        });
+    }
+
+    // Close on click
+    closeBtn.addEventListener('click', () => {
+        popup.style.opacity = "0";
+        setTimeout(() => popup.style.display = "none", 300);
+    });
+})();
+</script>
 
 
 
 </body>
 </html>
+
 
 

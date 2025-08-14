@@ -20,7 +20,7 @@
 <div id="splash-screen">
   <img src="images/logo.jpg" alt="Logo" class="splash-logo" />
   <h1 class="splash-text">Narendra Kumar Verma</h1>
-  <p class="splash-greeting">🌸 Happy Janmashtami & 🇮🇳 Happy Independence Day! 🌸</p>
+  <p class="splash-greeting"> Happy Janmashtami & Happy Independence Day! </p>
   <audio id="splash-sound" src="splash.mp3" preload="auto"></audio>
 </div>
 
@@ -224,13 +224,18 @@ setInterval(showSlide, 5000);
 </footer>
 
 <script>
-  // Splash screen timeout
-  window.addEventListener('load', () => {
-    const splash = document.getElementById('splash-screen');
-    const audio = document.getElementById('splash-audio');
+  window.addEventListener('load', function () {
+    const splashSound = document.getElementById("splash-sound");
+    splashSound.play();
+
     setTimeout(() => {
-      splash.style.opacity = '0';
-      splash.style.pointerEvents = 'none';
+      const splash = document.getElementById("splash-screen");
+      splash.style.opacity = "0";
+      splash.style.pointerEvents = "none";
+
+      // Show main content after splash
+      const content = document.getElementById("main-content");
+      if (content) content.classList.add("visible");
     }, 2000);
   });
   const toggle = document.querySelector('.menu-toggle'),
@@ -243,4 +248,5 @@ toggle.addEventListener('click', () => mobile.classList.toggle('open'));
 
 </body>
 </html>
+
 

@@ -5,14 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>Narendra Kumar Verma - Tourist Guide in Agra</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- Favicon -->
   <link rel="icon" href="images/logo.jpg" type="image/jpeg">
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
-
-  <!-- External CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -23,24 +17,23 @@
   <audio id="splash-sound" src="splash.mp3" preload="auto"></audio>
 </div>
 
-<!-- Wrap your existing content in a main container -->
 <div id="main-content" class="fade-in">
-  <!-- Your existing content starts here -->
-
-
-
   <!-- NAVIGATION -->
   <nav>
     <div class="container nav-container">
       <a href="index.html"><img src="images/logo.jpg" alt="Logo" class="logo"></a>
-      <a href="booktour.html" class="book-tour-btn">Book Tour</a>
-      <button class="menu-toggle" aria-label="Open Menu">
-  ☰
-  <span class="menu-arrow">➜</span>
-</button>
+      <!-- Social icons for mobile nav -->
+      <div class="mobile-social-icons">
+      <a href="mailto:travelhghts98@gmail.com" aria-label="Gmail"><i class="fa fa-envelope"></i></a>
+      <a href="https://wa.me/919557824127" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+
+     <button class="menu-toggle" aria-label="Open Menu">
+     <img src="images/menu.gif" alt="Menu" class="menu-icon">
+     </button>
 
       <ul class="nav-links">
-        
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="tours.html" class="tour-highlight">Tour Packages</a></li>
@@ -49,59 +42,86 @@
         <li><a href="review.html">Rate & Review</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      
       <div class="mobile-menu">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
-        <li><a href="tours.html" class="tour-highlight">Tour Packages</a></li>
+        <a href="tours.html" class="tour-highlight">Tour Packages</a>
         <a href="gallery.html">Gallery</a>
         <a href="testimonials.html">Testimonials</a>
         <a href="review.html">Rate & Review</a>
         <a href="contact.html">Contact</a>
       </div>
+      
     </div>
   </nav>
-<!-- Floating Review Button -->
-<a href="review.html" class="floating-review" title="Leave a Review" aria-label="Leave a Review">📝 Give Us a Review</a>
+  <a href="review.html" class="floating-review" title="Leave a Review" aria-label="Leave a Review">📝 Give Us a Review</a>
+  <a href="tel:+919557824127" class="floating-call">📞</a>
 
   <!-- HERO SLIDESHOW -->
-  <section class="hero slideshow">
-    <!-- Slides will be injected via JS -->
-    <div class="hero-content">
-  <h1 class="hero-title">Taj / Fort Same Day Tour</h1>
-  <h2 class="hero-subtitle">With Narendra Kumar Verma</h2>
-</div>
-
-  </section>
+  <!-- In the HERO SLIDESHOW section, update the hero-content block as follows: -->
+<section class="hero slideshow">
+  <div class="hero-content">
+    <h1 class="hero-title">Taj / Fort Same Day Tour</h1>
+    <!-- Move "With Narendra Kumar Verma" below the button -->
+    <h2 class="hero-subtitle">With Narendra Kumar Verma</h2>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-gradient"></div>
+</section>
   <div class="sliding-bar">
-  <p>I'm Narendra Kumar Verma, a certified tourist guide based in Agra with over 13 years of experience. I provide English-speaking guides for the 7th Wonder — the Taj Mahal — and Agra Fort. Through this site, you can easily book your guided tour appointment. Contact me now for your guided Tour. NO ONLINE BOOKING - NO RISK</p>
-</div>
-
+    <p>I'm Narendra Kumar Verma, a certified tourist guide based in Agra with over 13 years of experience. I provide English-speaking guides for the 7th Wonder — the Taj Mahal — and Agra Fort. Through this site, you can easily book your guided tour appointment. Contact me now for your guided Tour. NO ONLINE BOOKING - NO RISK</p>
+  </div>
+ <a href="booktour.html" class="book-guided-tour-btn" title="Book your guided tour">Book Guided Tour</a>
   <!-- Taj Mahal Highlight Section -->
-<section class="tajmahal-section">
-  <div class="tajmahal-container">
-    <img
-      src="https://images.pexels.com/photos/2413613/pexels-photo-2413613.jpeg"
-      alt="Taj Mahal"
-      class="tajmahal-img"
-    />
-    <p class="tajmahal-description">
-      The Taj Mahal is a white marble mausoleum located in Agra, India, built by Mughal emperor Shah Jahan in memory of his wife Mumtaz Mahal. It's renowned for its stunning architecture, considered a masterpiece of Indo-Islamic style, and is a UNESCO World Heritage Site. The complex includes the main mausoleum, a mosque, a guest house, and gardens, all situated on the banks of the Yamuna River.
-    </p>
+  <section class="tajmahal-section">
+    <div class="tajmahal-container">
+      <img src="https://images.pexels.com/photos/2413613/pexels-photo-2413613.jpeg" alt="Taj Mahal" class="tajmahal-img" />
+      <p class="tajmahal-description">
+        The Taj Mahal is a white marble mausoleum located in Agra, India, built by Mughal emperor Shah Jahan in memory of his wife Mumtaz Mahal. It's renowned for its stunning architecture, considered a masterpiece of Indo-Islamic style, and is a UNESCO World Heritage Site. The complex includes the main mausoleum, a mosque, a guest house, and gardens, all situated on the banks of the Yamuna River.
+      </p>
+    </div>
+  </section>
+  <section class="guide-info-section">
+    <div class="guide-info-container">
+      <h2>Meet Your Guide</h2>
+      <p>
+        Hello, and welcome to my website!
+        I'm <strong>Narendra Kumar Verma</strong>, a certified tourist guide based in Agra.
+        With over 13 years of experience, I offer insightful, safe, and memorable tours for international travelers.
+        This platform allows me to connect directly with tourists, offering a reliable way to explore the majestic Taj Mahal with complete historical and cultural knowledge.
+      </p>
+      <a href="about.html" class="read-more-btn">Read More</a>
+    </div>
+  <section class="testimonials" id="testimonial-slideshow" aria-label="Tourist testimonials" style="margin-bottom: 38px;">
+  <h2 style="text-align:center; color: #4a90e2; font-family: 'Playfair Display', serif; margin-bottom: 18px;">Tourist Testimonials</h2>
+  <div class="testimonial-slides">
+    <article class="testimonial" tabindex="0">
+      <p>"Narendra is an expert tour guide and is extremely knowledgeable of the history of the landmarks and culture in Agra. Narendra is very personable, understanding and friendly guide, which I would highly recommend to anyone looking for an informative and great tour of Agra and the Taj Mahal!"</p>
+      <div class="author">Rating – ⭐⭐⭐⭐⭐</div>
+      <div class="author">Name – Daniel</div>
+    </article>
+    <article class="testimonial" tabindex="0">
+      <p>"We had an absolutely amazing time on our tour in Agra! Our day started with the breathtaking Taj Mahal — no matter how many pictures you’ve seen, nothing compares to seeing it in person. The intricate details and the symmetry made it unforgettable.
+      We also visited the “Mini Taj” - just as beautiful in its own way, with delicate carvings and peaceful gardens.
+      Our last stop was the Agra Fort - The massive wall, grand courtyards, and history behind it were fascinating.
+      Overall, the tour was well-organized, our guide was friendly and knowledgeable, and every stop was worth it. Agra truly is a city full of history, beauty, and magic. Highly recommended!"</p>
+      <div class="author">Rating – ⭐⭐⭐⭐⭐</div>
+      <div class="author">Name – Maria Batista</div>
+    </article>
+    <article class="testimonial" tabindex="0">
+      <p>"Amazing tour in Agra! 🌟 We visited the Taj Mahal, the beautiful “Mini Taj,” and the impressive Agra Fort. Every stop was stunning and full of history. Our guide was friendly and made the experience even better. Highly recommend to anyone visiting Agra!"</p>
+      <div class="author">Rating – ⭐⭐⭐⭐⭐</div>
+      <div class="author">Name – Luis Moleirinho</div>
+    </article>
+    <article class="testimonial" tabindex="0">
+      <p>"An amazing tour guide. Excellent English and was easy to understand. Good knowledge of history and was enjoyable to learn more when visiting Agra! I would highly recommend his servers during your visit here."</p>
+      <div class="author">Rating – ⭐⭐⭐⭐⭐</div>
+      <div class="author">Name – Kevin Gnanaraj</div>
+    </article>
   </div>
+  <div class="testimonial-dots"></div>
 </section>
-<section class="guide-info-section">
-  <div class="guide-info-container">
-    <h2>Meet Your Guide</h2>
-    <p>
-      Hello, and welcome to my website!  
-      I'm <strong>Narendra Kumar Verma</strong>, a certified tourist guide based in Agra.  
-      With over 13 years of experience, I offer insightful, safe, and memorable tours for international travelers.  
-      This platform allows me to connect directly with tourists, offering a reliable way to explore the majestic Taj Mahal with complete historical and cultural knowledge.
-    </p>
-    <a href="about.html" class="read-more-btn">Read More</a>
-  </div>
-</section>
-
 
   <!-- MAIN -->
   <main class="container">
@@ -114,170 +134,172 @@
       </div>
     </section>
     <div class="floating-book-now">
-  <p>BOOK NOW, PAY AFTER GUIDED TOUR</p>
-</div>
-
-
-    <!-- Floating graphics -->
+      <p>BOOK NOW, PAY AFTER GUIDED TOUR</p>
+    </div>
     <div class="floating-graphic circle1"></div>
     <div class="floating-graphic circle2"></div>
     <div class="floating-graphic circle3"></div>
   </main>
 
   <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 Narendra Kumar Verma. All rights reserved.</p>
-    <p>Contact: +91-95578-24127 | travelhghts98@gmail.com</p>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>CONTACT US</h3>
+        <p><i class="fa fa-map-marker"></i> Agra</p>
+        <p><i class="fa fa-phone"></i> +91 9557824127</p>
+        <p><i class="fa fa-envelope"></i> travelhghts98@gmail.com</p>
+      </div>
+      <div class="footer-col">
+        <h3>QUICK LINKS</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="tours.html">Tour Packages</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="review.html">Review</a></li>
+        </ul>
+        <!-- Google Maps Taj Mahal -->
+        <div class="footer-map" style="margin:18px 0;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.7226748304545!2d78.03995331504323!3d27.175144783001382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397477441f9c6b23%3A0x1c0b6c3ed8c3a6a2!2sTaj%20Mahal!5e0!3m2!1sen!2sin!4v1692626082189!5m2!1sen!2sin"
+            width="100%" height="140" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <!-- Social Buttons -->
+        <div class="footer-social-quicklinks">
+          <a href="https://www.instagram.com/" target="_blank" title="Instagram" class="footer-icon insta"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:travelhghts98@gmail.com" title="Gmail" class="footer-icon gmail"><i class="fa fa-envelope"></i></a>
+          <a href="https://www.facebook.com/" target="_blank" title="Facebook" class="footer-icon facebook"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>POPULAR TOURS</h3>
+        <ul>
+          <li>Same Day Agra Tour by Car</li>
+          <li>Same Day Agra Tour By Gatimaan Express</li>
+          <li>Same Day Agra Tour by Shatabdi Express</li>
+          <li>Agra Sunrise Tour by Car</li>
+        </ul>
+      </div>
+    </div>
     <div class="footer-social">
       <a href="#">&#9733;</a>
       <a href="#">&#9733;</a>
       <a href="#">&#9733;</a>
     </div>
+    <p>&copy; 2025 Narendra Kumar Verma. All rights reserved.</p>
   </footer>
 
-  <!-- Floating Call Button -->
-  <a href="tel:+919557824127" class="floating-call">📞</a>
 
-  <!-- SCRIPT -->
-  <script>
-    const toggle = document.querySelector('.menu-toggle'),
-          mobile = document.querySelector('.mobile-menu');
-    toggle.addEventListener('click', () => mobile.classList.toggle('open'));
-    const hero = document.querySelector('.hero.slideshow');
-const images = [
-  'images/taj-mahal.jpg',
-  'https://images.pexels.com/photos/7263943/pexels-photo-7263943.jpeg',
-  'images/itmad-ud-daula.jpg',
-  'https://images.unsplash.com/photo-1591018653367-9c01498b3320?q=80&w=1170&auto=format&fit=crop'
-  
-];
-
-let idx = 0;
-hero.style.transition = "opacity 1.2s ease-in-out";
-
-function showSlide() {
-  hero.style.opacity = 0;
-  setTimeout(() => {
-    hero.style.backgroundImage = `url('${images[idx]}')`;
-    hero.style.opacity = 1;
-  }, 600);
-  idx = (idx + 1) % images.length;
-}
-
-showSlide();
-setInterval(showSlide, 5000);
-
-  </script>
+</div>
 <script>
+  // Splash and fade-in
   window.addEventListener('load', function () {
     const splashSound = document.getElementById("splash-sound");
     splashSound.play();
-
     setTimeout(() => {
       const splash = document.getElementById("splash-screen");
       splash.style.display = "none";
-
-      // Fade in main content
       const content = document.getElementById("main-content");
       content.classList.add("visible");
     }, 2000);
   });
-</script>
-<!-- Splash Screen -->
-<div id="splash-screen">
-  <img src="logo.jpg" alt="Logo" class="splash-logo" />
-  <h1 class="splash-text">Narendra Kumar Verma</h1>
-  <audio id="splash-audio" src="splash.mp3" autoplay></audio>
-</div>
 
-<!-- Footer Section -->
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-col">
-      <h3>CONTACT US</h3>
-      <p><i class="fa fa-map-marker"></i> Agra</p>
-      <p><i class="fa fa-phone"></i> +91 9557824127</p>
-      <p><i class="fa fa-envelope"></i> travelhghts98@gmail.com</p>
-    </div>
-    <div class="footer-col">
-      <h3>QUICK LINKS</h3>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="same-day-tours.html">Same Day Tours</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="review.html">Review</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h3>POPULAR TOURS</h3>
-      <ul>
-        <li>Same Day Agra Tour by Car</li>
-        <li>Same Day Agra Tour By Gatimaan Express</li>
-        <li>Same Day Agra Tour by Shatabdi Express</li>
-        <li>Agra Sunrise Tour by Car</li>
-      </ul>
-    </div>
-  </div>
-</footer>
-
-<script>
-  window.addEventListener('load', function () {
-    const splashSound = document.getElementById("splash-sound");
-    splashSound.play();
-
-    setTimeout(() => {
-      const splash = document.getElementById("splash-screen");
-      splash.style.opacity = "0";
-      splash.style.pointerEvents = "none";
-
-      // Show main content after splash
-      const content = document.getElementById("main-content");
-      if (content) content.classList.add("visible");
-    }, 2000);
-  });
+  // Navigation mobile menu
   const toggle = document.querySelector('.menu-toggle'),
-      mobile = document.querySelector('.mobile-menu');
-toggle.addEventListener('click', () => mobile.classList.toggle('open'));
-
-</script>
-<!-- Independence Day Poster Popup -->
-<div id="poster-popup">
-  <div class="poster-content">
-    <span class="close-poster">&times;</span>
-    <img src="https://www.hindustantimes.com/ht-img/img/2025/08/11/original/1600w-awDwQxfpeyI_1754899171756.webp"
-         alt="Happy Independence Day">
-  </div>
-</div>
-
-<script>
-(function(){
-    const today = new Date();
-    const hideAfter = new Date("2025-08-17");
-    const popup = document.getElementById("poster-popup");
-    const closeBtn = document.querySelector(".close-poster");
-
-    // Show only before 17 August
-    if (today < hideAfter) {
-        window.addEventListener('load', () => {
-            popup.style.display = "flex";
-        });
-    }
-
-    // Close on click
-    closeBtn.addEventListener('click', () => {
-        popup.style.opacity = "0";
-        setTimeout(() => popup.style.display = "none", 300);
+        mobile = document.querySelector('.mobile-menu');
+  if (toggle && mobile) {
+    toggle.addEventListener('click', function () {
+      mobile.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', mobile.classList.contains('open'));
+      if (mobile.classList.contains('open')) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "";
+      }
     });
-})();
+    mobile.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobile.classList.remove('open');
+        toggle.setAttribute('aria-expanded', "false");
+        document.body.style.overflow = "";
+      });
+    });
+  }
+
+  // Hero slideshow
+  const hero = document.querySelector('.hero.slideshow');
+  const images = [
+    'images/taj-mahal.jpg',
+    'https://images.pexels.com/photos/7263943/pexels-photo-7263943.jpeg',
+    'images/itmad-ud-daula.jpg',
+    'https://images.unsplash.com/photo-1591018653367-9c01498b3320?q=80&w=1170&auto=format&fit=crop'
+  ];
+  let idx = 0;
+  hero.style.transition = "opacity 1.2s ease-in-out";
+  function showSlide() {
+    hero.style.opacity = 0;
+    setTimeout(() => {
+      hero.style.backgroundImage = `url('${images[idx]}')`;
+      hero.style.opacity = 1;
+    }, 600);
+    idx = (idx + 1) % images.length;
+  }
+  showSlide();
+  setInterval(showSlide, 5000);
+  // Dismiss floating buttons on tap for accessibility (optional)
+  document.querySelectorAll('.floating-review, .floating-call').forEach(function(btn){
+    btn.addEventListener('dblclick', function(){ btn.style.display='none'; });
+  });
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const slides = document.querySelectorAll('#testimonial-slideshow .testimonial');
+  const dotsContainer = document.querySelector('#testimonial-slideshow .testimonial-dots');
+  const slideContainer = document.querySelector('#testimonial-slideshow .testimonial-slides');
+  let current = 0;
+  let timer;
 
+  function adjustContainerHeight(idx) {
+    // Get height of current testimonial and set container height
+    const activeSlide = slides[idx];
+    if (activeSlide) {
+      slideContainer.style.height = activeSlide.scrollHeight + "px";
+    }
+  }
 
+  function showSlide(idx) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active', 'exit-right');
+      if (i === idx) {
+        slide.classList.add('active');
+      } else if (i === current) {
+        slide.classList.add('exit-right');
+      }
+    });
+    document.querySelectorAll('.testimonial-dot').forEach((dot, i) => {
+      dot.classList.toggle('active', i === idx);
+    });
+    current = idx;
+    adjustContainerHeight(idx);
+    clearTimeout(timer);
+    timer = setTimeout(() => showSlide((current + 1) % slides.length), 6000);
+  }
 
+  // Dots
+  dotsContainer.innerHTML = '';
+  slides.forEach((_, i) => {
+    const dot = document.createElement('span');
+    dot.className = 'testimonial-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => showSlide(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  // Initial adjustment
+  showSlide(0);
+  window.addEventListener('resize', () => adjustContainerHeight(current));
+});
+</script>
 </body>
 </html>
-
-
-
-

@@ -3,197 +3,276 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <title>Book Tour - Narendra Kumar Verma</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" href="images/logo.jpg" type="image/jpeg">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <title>Book Guided Tour - Narendra Kumar Verma</title>
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    /* Center hero content */
-    .coming-soon-section {
-      height: 80vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: linear-gradient(135deg, #1a1a1a, #333);
-      color: white;
-      overflow: hidden;
-      position: relative;
-    }
-    /* Floating animated shapes */
-    .shape {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255, 165, 0, 0.3);
-      animation: float 8s infinite ease-in-out;
-      z-index: 0;
-    }
-    .shape:nth-child(1) { width: 150px; height: 150px; top: 10%; left: 15%; animation-delay: 0s; }
-    .shape:nth-child(2) { width: 200px; height: 200px; bottom: 15%; right: 10%; animation-delay: 2s; }
-    .shape:nth-child(3) { width: 100px; height: 100px; bottom: 30%; left: 5%; animation-delay: 4s; }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-30px) rotate(180deg); }
-    }
-
-    /* Heading animation */
-    .coming-soon-section h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: #ffcc00;
-      text-shadow: 2px 2px 10px rgba(255, 204, 0, 0.7);
-      animation: glow 2s infinite alternate;
-      z-index: 1;
-    }
-    @keyframes glow {
-      from { text-shadow: 0 0 10px #ffcc00, 0 0 20px #ff9900; }
-      to { text-shadow: 0 0 20px #fff176, 0 0 40px #ffcc00; }
-    }
-
-    /* Subtext */
-    .coming-soon-section p {
-      margin-top: 10px;
-      font-size: 1.2rem;
-      color: #eaeaea;
-      z-index: 1;
-    }
-
-    /* Button */
-    .tour-btn {
-      margin-top: 20px;
-      padding: 12px 24px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: white;
-      background: linear-gradient(90deg, #ff9900, #ffcc00);
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      box-shadow: 0 0 20px rgba(255, 204, 0, 0.6);
-      animation: pulse 1.5s infinite;
-      text-decoration: none;
-      z-index: 1;
-    }
-    /* Floating Call Button */
-.floating-call {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: linear-gradient(45deg, #ff9900, #ffcc00);
-  color: white;
-  font-size: 1.8rem;
-  padding: 12px 16px;
-  border-radius: 50%;
-  box-shadow: 0 4px 15px rgba(255, 153, 0, 0.6);
-  text-decoration: none;
-  z-index: 1000;
-  animation: callPulse 1.5s infinite;
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.floating-call:hover {
-  transform: scale(1.1);
-  background: linear-gradient(45deg, #ffcc00, #ff9900);
-}
-
-@keyframes callPulse {
-  0% { box-shadow: 0 0 10px rgba(255, 204, 0, 0.7); }
-  50% { box-shadow: 0 0 25px rgba(255, 204, 0, 1); }
-  100% { box-shadow: 0 0 10px rgba(255, 204, 0, 0.7); }
-}
-
-    @keyframes pulse {
-      0% { transform: scale(1); box-shadow: 0 0 15px rgba(255, 204, 0, 0.6); }
-      50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(255, 204, 0, 0.9); }
-      100% { transform: scale(1); box-shadow: 0 0 15px rgba(255, 204, 0, 0.6); }
-    }
-  </style>
+  <link rel="icon" href="images/logo.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-<!-- NAVIGATION (Same as index) -->
-<nav>
-  <div class="container nav-container">
-    <a href="index.html"><img src="images/logo.jpg" alt="Logo" class="logo"></a>
-    <button class="menu-toggle">☰</button>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="tours.html" class="tour-highlight">Tour Packages</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="testimonials.html">Testimonials</a></li>
-      <li><a href="review.html">Rate & Review</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="mobile-menu">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="tours.html" class="tour-highlight">Tour Packages</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="testimonials.html">Testimonials</a>
-      <a href="review.html">Rate & Review</a>
-      <a href="contact.html">Contact</a>
+  <!-- NAVIGATION (reuse your nav) -->
+  <nav>
+    <div class="container nav-container">
+      <a href="index.html"><img src="images/logo.jpg" alt="Logo" class="logo"></a>
+      <!-- Social icons for mobile nav -->
+      <div class="mobile-social-icons">
+      <a href="mailto:travelhghts98@gmail.com" aria-label="Gmail"><i class="fa fa-envelope"></i></a>
+      <a href="https://wa.me/919557824127" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+      <button class="menu-toggle" aria-label="Open Menu">
+        <img src="images/menu.gif" alt="Menu" class="menu-icon">
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="tours.html">Tour Packages</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="review.html">Rate & Review</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="booktour.html" class="active">Book Tour</a></li>
+      </ul>
+      <div class="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="tours.html">Tour Packages</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="review.html">Rate & Review</a>
+        <a href="contact.html">Contact</a>
+  </nav>
+
+  <section class="tour-hero container">
+  <div class="tour-hero-content">
+    
+    <!-- LEFT: IMAGE -->
+    <div class="tour-hero-image">
+      <img src="images\taj-mahal.jpg" alt="Taj Mahal Guided Tour">
+    </div>
+    
+    <!-- RIGHT: DETAILS -->
+    <div class="tour-hero-details">
+      <h1>Guide For Taj Mahal</h1>
+      <p><span class="tag">Guided Tour</span> | <strong>Places to visit:</strong> Taj Mahal</p>
+      
+      <div class="tour-card">
+        <div class="tour-pricing">
+          <div>
+            <p>Starting from</p>
+           <h3 class="price" data-usd="24">USD $24</h3>
+
+            <small>For 2 person (Min. 2 required)</small>
+          </div>
+          <div>
+            <p>Duration of Tour</p>
+            <h3>4 Hrs Sightseeing</h3>
+          </div>
+        </div>
+        
+        <div class="tour-why">
+          <h4>Why choose us:</h4>
+          <ul>
+            <li>✔ Tour Guide Service</li>
+            <li>✔ Government Approved Tour Guide</li>
+            <li>✔ City Monument Explanation</li>
+            <li>✔ Customizeable Itinerary</li>
+            <li>✔ Hassle Free Sightseeing</li>
+            <li>✔ Best price guaranteed</li>
+          </ul>
+        </div>
+        
+        <a href="booking-form.html" class="book-btn">Book Now</a>
+      </div>
     </div>
   </div>
-</nav>
-<!-- Floating Call Button -->
-<a href="tel:+919557824127" class="floating-call" title="Call Now" aria-label="Call Now">
-    📞
-</a>
-
-
-<!-- Floating Review Button -->
-<a href="review.html" class="floating-review" title="Leave a Review" aria-label="Leave a Review">📝 Give Us a Review</a>
-
-<!-- Coming Soon Section -->
-<section class="coming-soon-section">
-  <div class="shape"></div>
-  <div class="shape"></div>
-  <div class="shape"></div>
-  <h1>🚧 We are working on it!</h1>
-  <p>Our new Book Tour feature will be live soon.</p>
-  <a href="tours.html" class="tour-btn">✨ Till then, check Tour Packages</a>
 </section>
 
-<!-- Footer Section -->
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-col">
-      <h3>CONTACT US</h3>
-      <p><i class="fa fa-map-marker"></i> Agra</p>
-      <p><i class="fa fa-phone"></i> +91 9557824127</p>
-      <p><i class="fa fa-envelope"></i> travelhghts98@gmail.com</p>
+    <div class="currency-switcher">
+  <label for="currencySelect">Choose Currency</label>
+  <select id="currencySelect" onchange="convertCurrency()">
+    <option value="usd">USD</option>
+    <option value="inr">INR</option>
+  </select>
+</div>
+<!-- KNOW ABOUT YOUR GUIDE -->
+<section class="guide-info container">
+  <h2 class="section-title">Know About Your Guide</h2>
+  <div class="guide-card">
+    <div class="guide-image">
+      <img src="images/guide.jpg" alt="Your Tour Guide">
     </div>
-    <div class="footer-col">
-      <h3>QUICK LINKS</h3>
+    <div class="guide-details">
+      <h3>Narendra Kumar Verma</h3>
+      <p>
+        I am a Government Approved Tour Guide in Agra with over a decade of experience 
+        guiding tourists from all around the world. With deep knowledge of Indian history, 
+        culture, and architecture, I ensure that your Taj Mahal and Agra tour is both 
+        informative and memorable.  
+      </p>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="same-day-tours.html">Same Day Tours</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="review.html">Review</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h3>POPULAR TOURS</h3>
-      <ul>
-        <li>Same Day Agra Tour by Car</li>
-        <li>Same Day Agra Tour By Gatimaan Express</li>
-        <li>Same Day Agra Tour by Shatabdi Express</li>
-        <li>Agra Sunrise Tour by Car</li>
+        <li>✔ Licensed & Approved by Ministry of Tourism</li>
+        <li>✔ Fluent in English </li>
+        <li>✔ 10+ Years of Experience with International Tourists</li>
+        <li>✔ Personalized & Hassle-Free Sightseeing</li>
       </ul>
     </div>
   </div>
-</footer>
+</section>
+
+</section>
+<!-- OVERVIEW -->
+<section class="tour-details container">
+  <h2 class="section-title">Overview</h2>
+  <p>
+    You can appoint a Guide For Taj Mahal. By appointing a guide for Taj Mahal you will have a very convenient trip as a guide ensures your safety and makes sure that your itineraries are met and everything is informed in an entertaining manner because he has an experience of decades. Every tour guide has a different level of expertise. It is better to appoint a more experienced tour guide because he has served thousands of tourists. Not only pure facts but he will make you a part of the destination you are visiting.
+  </p>
+  <div class="notice-box">
+    <strong>PLEASE NOTE:</strong> Taj Mahal remains closed on every Friday. Timing: Every Day, Sunrise to Sunset.
+  </div>
+</section>
+
+<!-- TOUR ITINERARY -->
+<section class="tour-details container">
+  <h2 class="section-title">Tour Itinerary with Your Guide</h2>
+  <ol>
+    <li>I will personally meet you at your hotel in Agra or any pre-decided location.</li>
+    <li>Together we will proceed to the Taj Mahal, where I will share detailed insights into its history, architecture, and hidden stories.</li>
+    <li>After exploring the Taj Mahal, I will guide you through the local surroundings, helping you experience the culture of Agra.</li>
+    <li>Your personalized guided sightseeing will conclude after covering all chosen highlights.</li>
+  </ol>
+  <p><strong>END OF TOUR WITH YOUR GUIDE</strong></p>
+</section>
+
+
+<!-- WHAT'S INCLUDED -->
+<section class="tour-details container">
+  <h2 class="section-title">What's Included</h2>
+  <ul class="included">
+    <li>✔ Guided Tour Service by <strong>Narendra Kumar Verma</strong></li>
+    <li>✔ In-depth explanation of the Taj Mahal & Agra monuments</li>
+    <li>✔ Assistance with photography spots & cultural experiences</li>
+    <li>✔ Complimentary mineral water during sightseeing</li>
+    <li>✔ Fully licensed & government approved guide services</li>
+  </ul>
+</section>
+
+
+<!-- WHAT'S NOT INCLUDED -->
+<section class="tour-details container">
+  <h2 class="section-title">What's Not Included</h2>
+  <ul class="not-included">
+    <li>✘ Entrance tickets to monuments (can be arranged separately)</li>
+    <li>✘ Transport (can be arranged on request)</li>
+    <li>✘ Meals, drinks, and personal expenses</li>
+  </ul>
+</section>
+
+
+<!-- GUIDE SERVICE CHARGES -->
+<section class="tour-details container">
+  <h2 class="section-title">Guide Service Charges</h2>
+  <table class="charges-table">
+    <thead>
+      <tr>
+        <th>Group Size</th>
+        <th>Guide Charges</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1 to 4 Persons</td>
+        <td class="price" data-usd="24">USD $24</td>
+      </tr>
+      <tr>
+        <td>5 to 15 Persons</td>
+        <td class="price" data-usd="35">USD $35</td>
+      </tr>
+      <tr>
+        <td>16 to 25 Persons</td>
+        <td class="price" data-usd="45">USD $45</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+  </table>
+</section>
+
+  <!-- FOOTER (reuse your footer style) -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>CONTACT US</h3>
+        <p><i class="fa fa-map-marker"></i> Agra</p>
+        <p><i class="fa fa-phone"></i> +91 9557824127</p>
+        <p><i class="fa fa-envelope"></i> travelhghts98@gmail.com</p>
+      </div>
+      <div class="footer-col">
+        <h3>QUICK LINKS</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="tours.html">Tour Packages</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="review.html">Review</a></li>
+        </ul>
+         <!-- Google Maps Taj Mahal -->
+        <div class="footer-map" style="margin:18px 0;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.7226748304545!2d78.03995331504323!3d27.175144783001382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397477441f9c6b23%3A0x1c0b6c3ed8c3a6a2!2sTaj%20Mahal!5e0!3m2!1sen!2sin!4v1692626082189!5m2!1sen!2sin"
+            width="100%" height="140" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <!-- Social Buttons -->
+        <div class="footer-social-quicklinks">
+          <a href="https://www.instagram.com/" target="_blank" title="Instagram" class="footer-icon insta"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:travelhghts98@gmail.com" title="Gmail" class="footer-icon gmail"><i class="fa fa-envelope"></i></a>
+          <a href="https://www.facebook.com/" target="_blank" title="Facebook" class="footer-icon facebook"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+      </div>
+      <div class="footer-col">
+        <h3>POPULAR TOURS</h3>
+        <ul>
+          <li>Same Day Agra Tour by Car</li>
+          <li>Same Day Agra Tour By Train</li>
+          <li>Agra Sunrise Tour</li>
+        </ul>
+      </div>
+    </div>
+    <p>&copy; 2025 Narendra Kumar Verma. All rights reserved.</p>
+  </footer>
 <script>
-  const toggle = document.querySelector('.menu-toggle'),
-        mobile = document.querySelector('.mobile-menu');
-  toggle.addEventListener('click', () => mobile.classList.toggle('open'));
+  function convertCurrency() {
+    const currency = document.getElementById("currencySelect").value;
+    const usdToInr = 87.65; // Conversion rate
+    const priceElements = document.querySelectorAll(".price");
+
+    priceElements.forEach(el => {
+      const baseUSD = parseFloat(el.getAttribute("data-usd"));
+      if (currency === "usd") {
+        el.textContent = `USD $${baseUSD}`;
+      } else {
+        const inrPrice = baseUSD * usdToInr;
+        el.textContent = `INR ₹${inrPrice.toLocaleString("en-IN", { maximumFractionDigits: 0 })}`;
+      }
+    });
+  }
 </script>
+
+<script>
+  const menuToggle = document.querySelector(".menu-toggle");
+  const mobileMenu = document.querySelector(".mobile-menu");
+
+  menuToggle.addEventListener("click", () => {
+    mobileMenu.classList.toggle("open");
+  });
+</script>
+
+
+
 
 </body>
 </html>

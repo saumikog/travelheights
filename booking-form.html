@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <title>Booking Form – Narendra Kumar Verma</title>
+  <link rel="icon" href="images/logo.jpg" type="image/jpeg">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand:#2e7d32;         
+      --brand-dark:#256528;
+      --bg:#f6f7f9;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --ring:#e5e7eb;
+      --shadow:0 8px 24px rgba(0,0,0,.06);
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial}
+    img{display:block;max-width:100%}
+
+    /* Header */
+    .header{
+      background:var(--brand);
+      color:#fff;
+      padding:16px 20px;
+      display:flex;align-items:center;justify-content:center;gap:14px;
+    }
+    .header .logo{
+      width:48px;height:48px;border-radius:12px;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,.25)
+    }
+    .header .title{margin:0;font-weight:700;font-size:18px}
+    .header .subtitle{margin:0;font-size:12px;opacity:.9}
+
+    /* Layout */
+    .wrap{max-width:1080px;margin:28px auto;padding:0 16px}
+    .layout{display:grid;grid-template-columns:2fr 1fr;gap:24px}
+    @media (max-width: 900px){.layout{grid-template-columns:1fr}}
+
+    /* Cards */
+    .card{
+      background:var(--card);border:1px solid var(--ring);border-radius:var(--radius);
+      box-shadow:var(--shadow);padding:22px;
+    }
+    .card + .card{margin-top:18px}
+
+    .section-title{margin:0 0 14px;font-size:20px;font-weight:800;display:flex;align-items:center;gap:10px}
+    .badge{width:28px;height:28px;border-radius:999px;background:#e9f5ec;color:var(--brand);display:grid;place-items:center;font-weight:800}
+
+    /* Grid form */
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .grid-1{display:grid;grid-template-columns:1fr;gap:16px}
+    @media (max-width: 900px){ .grid-2{grid-template-columns:1fr} }
+
+    label{font-weight:700;font-size:13px}
+    .control{
+      margin-top:6px;width:100%;
+      border:1px solid var(--ring);border-radius:10px;padding:12px 12px;
+      font-size:15px;background:#fff
+    }
+    textarea.control{min-height:120px;resize:vertical}
+
+    /* Submit */
+    .actions{margin-top:8px}
+    .btn-submit{
+      background:var(--brand);color:#fff;border:0;border-radius:10px;
+      font-weight:800;font-size:16px;padding:14px 18px;width:100%;
+      cursor:pointer;transition:.2s transform, .2s background;
+    }
+    .btn-submit:hover{background:var(--brand-dark);transform:translateY(-1px)}
+    @media (min-width: 900px){.btn-submit{max-width:300px}}
+
+    /* Help box + contact */
+    .help .line{display:flex;gap:10px;margin:10px 0;color:var(--text)}
+    .help .line i{color:#f59e0b;margin-top:3px;min-width:18px;text-align:center}
+    .help a{color:var(--text);text-decoration:none}
+    .muted{color:var(--muted);font-size:13px}
+
+    .contact-strip{
+      background:#0b0c10;color:#fff;margin-top:28px;padding:22px;border-radius:var(--radius)
+    }
+    .contact-strip h3{margin:0 0 10px;color:#ffa117;letter-spacing:.5px}
+    .contact-item{display:flex;align-items:center;gap:12px;margin:10px 0;font-size:16px}
+    .contact-item i{color:#ffa117}
+    .contact-item a{color:#fff;text-decoration:none}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <img class="logo" src="images/logo.jpg" alt="Logo">
+    <div>
+      <h1 class="title">Narendra Kumar Verma</h1>
+      <p class="subtitle">Government Approved Tour Guide — Agra</p>
+    </div>
+  </header>
+
+  <!-- Body -->
+  <main class="wrap">
+    <div class="layout">
+
+      <!-- LEFT: FORM -->
+      <div>
+        <form id="bookingForm"> <!-- ✅ Added form wrapper here -->
+          <div class="card">
+            <h2 class="section-title"><span class="badge">1</span> Your Travel Details</h2>
+            <div class="grid-2">
+              <div>
+                <label for="arrival">Arrival Date</label>
+                <input id="arrival" name="arrival" type="date" class="control" required>
+              </div>
+              <div>
+                <label for="duration">Duration of Tour</label>
+                <select id="duration" name="duration" class="control" required>
+                  <option value="">Select</option>
+                  <option>Half Day</option><option>Full Day</option>
+                  <option>2 Days</option><option>3+ Days</option>
+                </select>
+              </div>
+              <div>
+                <label for="travellers">Total Travelers</label>
+                <select id="travellers" name="travellers" class="control" required>
+                  <option>1 Adult</option><option>2 Adults</option>
+                  <option>3 Adults</option><option>4 Adults</option>
+                  <option>Family / Group</option>
+                </select>
+              </div>
+              <div>
+                <label for="stay">Accommodation Type <span class="muted">(Optional)</span></label>
+                <select id="stay" name="stay" class="control">
+                  <option value="">Select</option>
+                  <option>Hotel</option><option>Guest House</option>
+                  <option>Resort</option><option>Not booked yet</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2 class="section-title"><span class="badge">2</span> Your Contact Details</h2>
+            <div class="grid-2">
+              <div>
+                <label for="name">Full Name</label>
+                <input id="name" name="name" type="text" class="control" placeholder="Enter your name" required>
+              </div>
+              <div>
+                <label for="email">Email Address</label>
+                <input id="email" name="email" type="email" class="control" placeholder="Enter your email" required>
+              </div>
+
+              <div>
+                <label for="code">Country Code</label>
+                <select id="code" name="code" class="control" required>
+                  <option value="">Select</option>
+                  <option value="+1">+1 (United States)</option>
+                  <option value="+44">+44 (United Kingdom)</option>
+                  <option value="+61">+61 (Australia)</option>
+                  <option value="+91">+91 (India)</option>
+                  <option value="+65">+65 (Singapore)</option>
+                  <!-- keep other codes -->
+                </select>
+              </div>
+              <div>
+                <label for="mobile">Mobile Number</label>
+                <input id="mobile" name="mobile" type="tel" class="control" placeholder="Enter your number" required>
+              </div>
+
+              <div class="grid-1">
+                <div>
+                  <label for="country">Country / Region</label>
+                  <select id="country" name="country" class="control" required>
+                    <option value="">Select</option>
+                    <option>India</option><option>USA</option><option>UK</option>
+                    <option>Australia</option><option>Canada</option>
+                    <option>Singapore</option><option>France</option>
+                    <!-- Add more countries -->
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid-1">
+                <div>
+                  <label for="msg">Description</label>
+                  <textarea id="msg" name="message" class="control" placeholder="Write any special request, flight timing, hotel, etc."></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="actions">
+              <button class="btn-submit" type="submit">SUBMIT ENQUIRY</button>
+            </div>
+          </div>
+        </form> <!-- ✅ closed form -->
+
+        <!-- CONTACT STRIP -->
+        <div class="contact-strip card">
+          <h3>CONTACT US</h3>
+          <div class="contact-item"><i class="fa-solid fa-location-dot"></i> Agra</div>
+          <div class="contact-item"><i class="fa-solid fa-phone"></i> <a href="tel:+919557824127">+91 9557824127</a></div>
+          <div class="contact-item"><i class="fa-solid fa-envelope"></i> <a href="mailto:travelhghts98@gmail.com">travelhghts98@gmail.com</a></div>
+        </div>
+      </div>
+
+      <!-- RIGHT HELP -->
+      <aside class="card help">
+        <h2 class="section-title"><span class="badge">?</span> Need Help</h2>
+        <p class="muted" style="margin:0 0 12px">We’re quick on WhatsApp & email.</p>
+        <div class="line"><i class="fa-solid fa-location-dot"></i> Agra</div>
+        <div class="line"><i class="fa-solid fa-phone"></i> <a href="tel:+919557824127">+91 9557824127</a></div>
+        <div class="line"><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/919557824127" target="_blank" rel="noopener">Chat on WhatsApp</a></div>
+        <div class="line"><i class="fa-solid fa-envelope"></i> <a href="mailto:travelhghts98@gmail.com">travelhghts98@gmail.com</a></div>
+      </aside>
+    </div>
+  </main>
+
+<script>
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  
+  const formData = {
+    arrival: this.arrival.value,
+    duration: this.duration.value,
+    travellers: this.travellers.value,
+    stay: this.stay.value,
+    name: this.name.value,
+    email: this.email.value,
+    code: this.code.value,
+    mobile: this.mobile.value,
+    country: this.country.value,
+    message: this.message.value
+  };
+
+ fetch("https://script.google.com/macros/s/AKfycbzj4sz8s57XwV9VSBI2iCzT865oepeTFDRSdF_O5YcgQP-EaZemt3tQMiacIUoeXKpdFQ/exec", {
+  method: "POST",
+  body: JSON.stringify(formData),
+  headers: { "Content-Type": "application/json" }
+})
+.then(res => res.json())  // 🔹 use .json() instead of .text()
+.then(data => {
+  if (data.status === "success") {
+    alert("Booking submitted successfully!");
+  } else {
+    alert("Error: " + data.message);
+  }
+})
+.catch(err => alert("Fetch error: " + err));
+});
+</script>
+
+</body>
+</html>

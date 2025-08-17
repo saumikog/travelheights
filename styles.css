@@ -789,3 +789,351 @@ nav .menu-toggle, .mobile-menu a, .book-tour-btn, .footer-col ul li a, .floating
   .testimonial-slides { min-height: 240px; }
   .testimonial { font-size: 0.97rem; padding: 18px 8px 15px 8px; }
 }
+/* Booking Page */
+.booking-section {
+  background: #fff;
+  padding: 2rem 1rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  max-width: 700px;
+  margin: 2rem auto;
+}
+
+.booking-form .form-group {
+  margin-bottom: 1.2rem;
+}
+
+.booking-form label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: #333;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border 0.3s;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+  border-color: var(--color-secondary);
+  outline: none;
+}
+
+.submit-btn {
+  display: inline-block;
+  background: var(--color-secondary);
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 22px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+  background: var(--color-primary);
+  transform: scale(1.05);
+}
+/* Pricing Section */
+.pricing-section {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.pricing-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  padding: 1.5rem;
+}
+
+.pricing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.pricing-header h3 {
+  margin: 5px 0;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.pricing-body {
+  text-align: left;
+  margin: 1rem 0;
+}
+
+.pricing-body h4 {
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.pricing-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pricing-body ul li {
+  font-size: 1rem;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.book-btn {
+  display: block;
+  width: 100%;
+  background: #4CAF50;
+  color: #fff;
+  padding: 12px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  margin-top: 12px;
+}
+
+.book-btn:hover {
+  background: #388e3c;
+  transform: scale(1.05);
+}
+
+.currency-toggle {
+  margin-top: 15px;
+  font-size: 0.95rem;
+}
+
+.currency-toggle label {
+  margin: 0 10px;
+  cursor: pointer;
+}
+/* Tour Details */
+.tour-details {
+  margin: 2rem auto;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.notice-box {
+  background: #fff3cd;
+  color: #856404;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.tour-details ol {
+  padding-left: 1.2rem;
+  margin: 1rem 0;
+}
+
+.included li {
+  color: #2e7d32;
+  margin-bottom: 6px;
+}
+
+.not-included li {
+  color: #c62828;
+  margin-bottom: 6px;
+}
+
+.charges-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.charges-table th,
+.charges-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.charges-table th {
+  background: #f5f5f5;
+}
+.tour-hero {
+  margin: 2rem auto;
+}
+
+.tour-hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.tour-hero-image {
+  flex: 1 1 50%;
+}
+
+.tour-hero-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.tour-hero-details {
+  flex: 1 1 45%;
+}
+
+.tour-hero-details h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.tour-hero-details .tag {
+  background: #ffc107;
+  color: #000;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.tour-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  margin-top: 1rem;
+}
+
+.tour-pricing {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tour-why ul {
+  margin: 0.5rem 0 1rem;
+  padding-left: 1rem;
+}
+
+.book-btn {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+  border: none;
+  border-radius: 50px;  /* ✅ Curved edges */
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.book-btn:hover {
+  background: linear-gradient(135deg, #45a049, #256d27);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+.currency-switcher {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.currency-switcher select {
+  padding: 10px 18px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 25px;
+  border: 2px solid #4CAF50;
+  background: #fff;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.currency-switcher select:hover {
+  border-color: #388E3C;
+  background: #f9f9f9;
+}
+
+.currency-switcher label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 15px;
+  color: #444;
+}
+.guide-info {
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.guide-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.guide-image img {
+  width: 220px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.guide-details {
+  flex: 1;
+}
+
+.guide-details h3 {
+  font-size: 1.6rem;
+  color: #2E7D32;
+  margin-bottom: 10px;
+}
+
+.guide-details p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.guide-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.guide-details ul li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #333;
+}

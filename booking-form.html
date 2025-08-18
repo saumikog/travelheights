@@ -218,39 +218,40 @@
     </div>
   </main>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-document.getElementById("bookingForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-  
-  const formData = {
-    arrival: this.arrival.value,
-    duration: this.duration.value,
-    travellers: this.travellers.value,
-    stay: this.stay.value,
-    name: this.name.value,
-    email: this.email.value,
-    code: this.code.value,
-    mobile: this.mobile.value,
-    country: this.country.value,
-    message: this.message.value
-  };
+  const SUPABASE_URL = "https://YOUR_PROJECT.supabase.co"; // from Supabase
+  const SUPABASE_KEY = "YOUR_ANON_KEY"; // from Supabase
+  const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
- fetch("https://script.google.com/macros/s/AKfycbzj4sz8s57XwV9VSBI2iCzT865oepeTFDRSdF_O5YcgQP-EaZemt3tQMiacIUoeXKpdFQ/exec", {
-  method: "POST",
-  body: JSON.stringify(formData),
-  headers: { "Content-Type": "application/json" }
-})
-.then(res => res.json())  // 🔹 use .json() instead of .text()
-.then(data => {
-  if (data.status === "success") {
-    alert("Booking submitted successfully!");
-  } else {
-    alert("Error: " + data.message);
-  }
-})
-.catch(err => alert("Fetch error: " + err));
-});
+  document.getElementById("bookingForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const formData = {
+      arrival_date: this.arrival.value,
+      duration: this.duration.value,
+      travellers: this.travellers.value,
+      stay: this.stay.value,
+      name: this.name.value,
+      email: this.email.value,
+      country_code: this.code.value,
+      mobile: this.mobile.value,
+      country: this.country.value,
+      message: this.message.value
+    };
+
+    let { data, error } = await db.from("bookings").insert([formData]);
+
+    if (error) {
+      alert("❌ Error: " + error.message);
+    } else {
+      alert("✅ Booking submitted!");
+      this.reset();
+    }
+  });
 </script>
+
 
 </body>
 </html>
+

@@ -218,10 +218,11 @@
     </div>
   </main>
 
+<!-- Supabase JS library -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-  const SUPABASE_URL = "https://jnmgzahwlztahadtgklx.supabase.co"; // from Supabase
-  const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpubWd6YWh3bHp0YWhhZHRna2x4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU1MTk1ODEsImV4cCI6MjA3MTA5NTU4MX0.PaMY3eW0OhXie33fp1vf_pygQNude8T6u9mJFvlTSmQ"; // from Supabase
+  const SUPABASE_URL = "https://jnmgzahwlztahadtgklx.supabase.co";  // replace
+  const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpubWd6YWh3bHp0YWhhZHRna2x4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU1MTk1ODEsImV4cCI6MjA3MTA5NTU4MX0.PaMY3eW0OhXie33fp1vf_pygQNude8T6u9mJFvlTSmQ";                    // replace
   const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
   document.getElementById("bookingForm").addEventListener("submit", async function(e) {
@@ -240,7 +241,7 @@
       message: this.message.value
     };
 
-    let { data, error } = await db.from("bookings").insert([formData]);
+    let { data, error } = await db.from("booking").insert([formData]);
 
     if (error) {
       alert("❌ Error: " + error.message);
@@ -252,7 +253,6 @@
 </script>
 
 
+
 </body>
 </html>
-
-

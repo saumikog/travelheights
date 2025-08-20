@@ -1137,3 +1137,301 @@ nav .menu-toggle, .mobile-menu a, .book-tour-btn, .footer-col ul li a, .floating
   font-size: 0.95rem;
   color: #333;
 }
+/* === Integrated Taj Mahal Section === */
+.tajmahal-section {
+  background: #f9f9f9;
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tajmahal-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background: #fff;
+  padding: 2rem;
+  max-width: 1100px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Left: Video/Image */
+.tajmahal-media {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tajmahal-video,
+.tajmahal-img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+/* Right: Text */
+.tajmahal-content {
+  flex: 1;
+  text-align: left;
+}
+
+.tajmahal-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.tajmahal-content p {
+  color: #444;
+  line-height: 1.7;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Button */
+.tajmahal-content .book-guided-tour-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #004aad, #0077ff);
+  color: #fff;
+  border: none;
+  border-radius: 32px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.tajmahal-content .book-guided-tour-btn:hover {
+  background: linear-gradient(135deg, #003380, #0059c1);
+  transform: scale(1.05);
+}
+
+/* === Responsive Design === */
+@media (max-width: 900px) {
+  .tajmahal-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .tajmahal-content {
+    text-align: center;
+  }
+
+  .tajmahal-video,
+  .tajmahal-img {
+    max-width: 100%;
+  }
+
+  .tajmahal-content h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* === Professional & Elegant Typography === */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #222; /* Darker, more professional tone */
+  line-height: 1.75;
+  font-size: 1rem;
+  background-color: #fdfdfd;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #222; /* Unified elegant heading color */
+  margin-bottom: 0.7em;
+}
+
+/* Elegant section titles */
+.section-title,
+.guide-info-container h2,
+.tour-hero-details h1,
+.testimonials h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* === Refined Link Styling === */
+a {
+  color: #004aad;
+  text-decoration: none;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+a:hover {
+  color: #ff6f61;
+}
+
+/* === Professional Buttons === */
+.book-guided-tour-btn,
+.book-tour-btn,
+.submit-btn {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #004aad, #0077ff);
+  color: #fff !important;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.book-guided-tour-btn:hover,
+.book-tour-btn:hover,
+.submit-btn:hover {
+  background: linear-gradient(135deg, #003380, #0059c1);
+  transform: scale(1.05);
+}
+
+/* === Elegant Tour Cards === */
+.tour-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tour-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+.tour-card h3 {
+  color: #004aad;
+  margin-bottom: 8px;
+  font-size: 1.3rem;
+}
+.tour-card p {
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* === Professional Testimonials === */
+.testimonials {
+  background: #fff;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.08);
+  padding: 2rem 1rem;
+  border-radius: 16px;
+}
+.testimonial {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #333;
+}
+/* === Integrated Agra Fort Section === */
+.agrafort-section {
+  background: #f9f9f9;
+  padding: 3rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.agrafort-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background: #fff;
+  padding: 2rem;
+  max-width: 1100px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Left: Video */
+.agrafort-media {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.agrafort-video {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+/* Right: Text */
+.agrafort-content {
+  flex: 1;
+  text-align: left;
+}
+
+.agrafort-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.agrafort-content p {
+  color: #444;
+  line-height: 1.7;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Button Styling */
+.agrafort-content .book-guided-tour-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #004aad, #0077ff);
+  color: #fff;
+  border: none;
+  border-radius: 32px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.agrafort-content .book-guided-tour-btn:hover {
+  background: linear-gradient(135deg, #003380, #0059c1);
+  transform: scale(1.05);
+}
+
+/* === Responsive Design === */
+@media (max-width: 900px) {
+  .agrafort-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .agrafort-content {
+    text-align: center;
+  }
+
+  .agrafort-video {
+    max-width: 100%;
+  }
+
+  .agrafort-content h2 {
+    font-size: 1.6rem;
+  }
+}
